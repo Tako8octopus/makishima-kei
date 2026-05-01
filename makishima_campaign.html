@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まきしま 啓 公式サイト｜国民民主党 福岡市議会議員候補（中央区）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#043e80;--navy2:#043e80;--navy3:#0a5aab;
+  --orange:#f5b500;--orange2:#f5b500;
+  --text:#181818;--muted:#5c5c5c;--light:#f5f4f1;
+  --white:#fff;--bd:rgba(0,0,0,0.09);
+  --serif:'Noto Serif JP',serif;--sans:'BIZ UDPGothic','BIZ UDゴシック',sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--text)}
+
+/* ========== NAV ========== */
+.nav{
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:58px;
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{color:var(--white);font-family:var(--serif);font-size:15px;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.nav-badge{background:#f5b500;color:#111111;font-size:10px;padding:3px 10px;letter-spacing:.08em;white-space:nowrap;font-weight:500}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;letter-spacing:.08em;transition:color .2s}
+.nav-links a:hover{color:var(--orange2)}
+
+/* ========== HERO ========== */
+.hero{
+  background:var(--navy2);
+  position:relative;min-height:620px;
+  display:flex;align-items:flex-end;
+}
+.hero-bg{position:absolute;inset:0;background:var(--navy2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;overflow:hidden}
+/* 実際の写真に差し替え時: .hero-bg に background-image を設定、background-size:cover */
+.hero-bg-note{color:rgba(255,255,255,.2);font-size:14px;letter-spacing:.14em}
+.hero-bg-sub{color:rgba(255,255,255,.11);font-size:11px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,62,128,.86) 42%,rgba(4,62,128,.14) 100%)}
+.hero-content{
+  position:relative;z-index:2;
+  width:100%;padding:3.5rem 2.5rem;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  max-width:560px;
+}
+.hero-area{color:rgba(255,255,255,.5);font-size:13px;letter-spacing:.1em;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
+.hero-sep{width:24px;height:1px;background:var(--orange);flex-shrink:0}
+.hero-catch{font-family:var(--serif);font-size:36px;font-weight:200;color:var(--white);line-height:1.95;letter-spacing:.06em;margin-bottom:2rem}
+.hero-catch em{color:var(--orange2);font-style:normal}
+.hero-bar{width:36px;height:3px;background:var(--orange);margin-bottom:1.6rem}
+.hero-ruby{color:rgba(255,255,255,.4);font-size:13px;letter-spacing:.24em;margin-bottom:.3rem}
+.hero-name{color:var(--white);font-family:var(--serif);font-size:36px;font-weight:300;letter-spacing:.16em;margin-bottom:.3rem}
+.hero-en{color:rgba(255,255,255,.28);font-size:12px;letter-spacing:.22em;margin-bottom:1.6rem}
+
+
+
+
+/* ========== GREETING ========== */
+.greet{background:var(--light);padding:4.5rem 2rem}
+.greet-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:3px 1fr;gap:2rem;align-items:start}
+.greet-bar{background:var(--orange);min-height:60px}
+.greet-text{font-size:15px;color:var(--muted);font-style:italic;line-height:2}
+
+/* ========== SECTION BASE ========== */
+.sec{padding:5rem 2rem}
+.sec-inner{max-width:920px;margin:0 auto}
+.sec-label{display:flex;align-items:baseline;gap:.75rem;margin-bottom:3rem;padding-bottom:1rem;border-bottom:2px solid var(--orange)}
+.sec-label-en{color:var(--orange);font-size:14px;letter-spacing:.22em;font-weight:500}
+.sec-label-jp{color:var(--muted);font-size:14px}
+
+/* ========== PROFILE ========== */
+.profile{background:var(--white)}
+
+/* 上段: 写真 + 本文 横並び */
+.profile-top{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:3rem;
+  align-items:start;
+}
+.profile-photo{
+  width:240px;height:295px;
+  background:var(--navy2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.profile-photo-note{color:rgba(255,255,255,.28);font-size:13px;letter-spacing:.1em}
+.profile-bio p{font-size:16px;line-height:2.2;color:#3a3a3a;margin-bottom:.85rem}
+.profile-bio p:last-child{margin-bottom:0}
+
+/* 全幅オレンジ区切り線 */
+.profile-divider{height:4px;background:var(--orange);margin-top:2.5rem}
+
+/* 下段: 全幅 詳細ブロック 縦積み */
+.profile-details{display:flex;flex-direction:column}
+.profile-detail-row{
+  border-left:3px solid var(--orange);
+  padding:.9rem 1.2rem;
+  background:var(--light);
+  border-bottom:1px solid var(--bd);
+  display:flex;gap:1rem;align-items:baseline;
+}
+.profile-detail-row:last-child{border-bottom:none}
+.profile-detail-key{font-size:13px;color:var(--orange);font-weight:500;letter-spacing:.1em;min-width:52px;flex-shrink:0}
+.profile-detail-val{font-size:15px;color:var(--text);line-height:1.85}
+
+/* ========== POLICY ========== */
+.policy{background:var(--light)}
+.policy-quote{font-size:18px;font-family:var(--serif);font-weight:300;color:var(--navy);border-left:3px solid var(--orange);padding:.6rem 1.1rem;margin-bottom:.9rem}
+.policy-sub{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:2.5rem}
+
+/* 3柱カード */
+.policy-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-bottom:1.5rem}
+.policy-card{background:var(--white);border-top:4px solid var(--orange);padding:1.75rem 1.5rem}
+.policy-card.navy-top{border-top-color:var(--navy)}.policy-card.accent-top{border-top-color:var(--orange)}
+.policy-card-num{font-size:11px;color:var(--orange);letter-spacing:.2em;font-weight:500;margin-bottom:.5rem}
+.policy-card-icon{font-size:22px;margin-bottom:.6rem;display:block}
+.policy-card-tag{
+  display:block;font-family:var(--serif);
+  font-size:22px;font-weight:300;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:.75rem;line-height:1.4;
+}
+.policy-card.navy-top .policy-card-tag{color:var(--navy)}
+.policy-card-title{font-size:14px;font-weight:500;color:var(--navy);line-height:1.75;margin-bottom:.75rem}
+.policy-card-body{font-size:14px;line-height:1.95;color:var(--muted)}
+
+/* 追加政策 */
+.policy-extra{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.policy-extra-card{background:var(--white);border-left:4px solid var(--orange);padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.policy-extra-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.policy-extra-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:.4rem}
+.policy-extra-body{font-size:14px;color:var(--muted);line-height:1.85}
+
+/* ========== NEWS ========== */
+.news{background:var(--white)}
+.news-item{display:flex;align-items:baseline;gap:1.25rem;padding:1.1rem 0;border-bottom:1px solid var(--bd);cursor:pointer;text-decoration:none;color:inherit}
+.news-item:hover .news-title{color:var(--orange)}
+.news-date{color:var(--muted);font-size:13px;min-width:88px;flex-shrink:0}
+.news-cat{background:var(--navy);color:var(--white);font-size:10px;padding:3px 9px;letter-spacing:.06em;flex-shrink:0}
+.news-title{font-size:16px;line-height:1.6;transition:color .2s}
+
+/* ========== SUPPORT ========== */
+.support{background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden}
+.support-ring1{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:580px;height:580px;border-radius:50%;border:1px solid rgba(240,120,0,.1);pointer-events:none}
+.support-ring2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:380px;height:380px;border-radius:50%;border:1px solid rgba(240,120,0,.07);pointer-events:none}
+.support-inner{max-width:540px;margin:0 auto;position:relative}
+.support-en{color:var(--orange2);font-size:11px;letter-spacing:.3em;margin-bottom:.9rem}
+.support-title{color:var(--white);font-family:var(--serif);font-size:26px;font-weight:200;line-height:2;margin-bottom:2rem}
+.support-title em{color:var(--orange2);font-style:normal}
+.support-btn{display:inline-block;padding:.85rem 3rem;border:1px solid var(--orange);color:var(--orange2);font-size:14px;letter-spacing:.14em;text-decoration:none;transition:all .2s}
+.support-btn:hover{background:var(--orange);color:var(--white)}
+
+/* ========== CONTACT ========== */
+.contact{background:var(--light)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.office-label{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.6rem}
+.office-info{font-size:15px;line-height:2.4;color:#3a3a3a}
+.contact .form-row{margin-bottom:1.1rem}
+.contact .form-row input,.contact .form-row textarea{background:var(--white)}
+.contact .form-row textarea{height:100px;resize:vertical}
+.contact .form-submit{background:var(--navy);color:var(--white);border:none;padding:.8rem 2.25rem;font-size:14px;letter-spacing:.12em;cursor:pointer;font-family:var(--sans);transition:background .2s}
+.contact .form-submit:hover{background:var(--navy3)}
+
+/* ========== FOOTER ========== */
+footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:1.75rem;font-size:12px;letter-spacing:.08em}
+footer span{color:var(--orange)}
+
+
+/* ========== LINE 後援会 ========== */
+.line-sec{background:var(--white)}
+.line-intro{font-size:16px;color:#3a3a3a;line-height:2;margin-bottom:2.5rem}
+.line-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.line-card{background:var(--light);padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem}
+.line-card-title{font-size:16px;font-weight:500;color:var(--navy)}
+.line-card-body{font-size:14px;color:var(--muted);line-height:1.85}
+.line-add-btn{display:inline-block;background:#06c755;color:#fff;padding:.85rem 2rem;font-size:15px;letter-spacing:.06em;text-decoration:none;font-weight:500;transition:opacity .2s}
+.line-add-btn:hover{opacity:.85}
+.line-qr{width:160px;height:160px;background:#fff;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
+.line-steps{list-style:none;text-align:left;width:100%}
+.line-steps li{font-size:14px;color:#3a3a3a;padding:.5rem 0;border-bottom:1px solid var(--bd);display:flex;gap:.75rem;align-items:baseline}
+.line-steps li:last-child{border-bottom:none}
+.line-step-num{color:var(--orange);font-weight:500;font-size:13px;flex-shrink:0;min-width:24px}
+
+/* ========== X TIMELINE ========== */
+.x-sec{background:var(--light)}
+.x-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.x-note{font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.8}
+.x-embed{background:var(--white);border:1px solid var(--bd);padding:1.5rem;text-align:center;color:var(--muted);font-size:13px;min-height:400px;display:flex;align-items:center;justify-content:center}
+
+/* ========== 後援会入会フォーム ========== */
+.support-form-sec{background:var(--white)}
+.support-form-intro{font-size:16px;color:#3a3a3a;line-height:2;margin-bottom:2.5rem}
+.support-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.support-form-grid .form-row-full{grid-column:1/-1}
+.form-row{margin-bottom:0}
+.form-row label{display:block;font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:.35rem}
+.form-row input,.form-row select,.form-row textarea{width:100%;border:1px solid var(--bd);padding:.65rem .8rem;font-size:15px;background:var(--light);font-family:var(--sans);color:var(--text)}
+.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c5c5c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;padding-right:2.5rem}
+.form-row textarea{height:100px;resize:vertical}
+.form-check{display:flex;align-items:flex-start;gap:.6rem;font-size:13px;color:#3a3a3a;line-height:1.7;margin:1rem 0}
+.form-check input[type=checkbox]{margin-top:3px;flex-shrink:0;accent-color:var(--navy)}
+.form-submit-wrap{margin-top:1.5rem;text-align:center}
+.form-submit{background:var(--navy);color:var(--white);border:none;padding:.9rem 3rem;font-size:15px;letter-spacing:.12em;cursor:pointer;font-family:var(--sans);transition:background .2s}
+.form-submit:hover{background:var(--navy3)}
+.form-note{font-size:12px;color:var(--muted);margin-top:.75rem;text-align:center}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero{min-height:480px}
+  .hero-catch{font-size:26px}
+  .hero-name{font-size:28px}
+  .hero-content{padding:2rem 1.5rem}
+  .profile-top{grid-template-columns:1fr;gap:1.5rem}
+  .profile-photo{width:100%;height:250px}
+  .policy-3{grid-template-columns:1fr}
+  .policy-extra{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <span class="nav-badge">国民民主党公認</span>
+    まきしま　啓　公式サイト
+  </div>
+  <ul class="nav-links">
+    <li><a href="#top">Top</a></li>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#policy">Policy</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#x-timeline">X</a></li>
+    <li><a href="#support-form">後援会</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <!-- 写真差し替え時: このdivを削除し .hero-bg に background-image:url('photo.jpg'); background-size:cover; を追加 -->
+    <div class="hero-bg-note">候補者写真（全画面）</div>
+    <div class="hero-bg-sub">実際の写真に差し替え後 overlay で調整</div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-area"><span class="hero-sep"></span>福岡市議会議員候補　中央区</div>
+    <div class="hero-catch">
+      働くあなたの、<br>
+      <em>時間・稼ぎ・命</em><br>
+      を守る。
+    </div>
+    <div class="hero-bar"></div>
+    <div class="hero-ruby">まきしま　けい</div>
+    <div class="hero-name">牧嶋　啓</div>
+    <div class="hero-en">KEI MAKISHIMA</div>
+    </div>
+</section>
+
+<!-- GREETING -->
+<section class="greet">
+  <div class="greet-inner">
+    <div class="greet-bar"></div>
+    <div class="greet-text" style="font-style:normal;color:#3a3a3a;font-size:16px;line-height:2.2;">
+      <p style="margin-bottom:1.1rem;">皆様、はじめまして。まきしま啓と申します。</p>
+      <p style="margin-bottom:1.1rem;">私が医者を志したのは、父がCRPS（難治性の慢性疼痛）を患ったからです。治したい一心で九州大学医学部に進み、麻酔科医として福岡の医療現場に立ち続けました。大学院では「痛みとは何か」をAIと表情解析で科学する研究にも携わりました。</p>
+      <p style="margin-bottom:1.1rem;">しかし現場と研究で見えてきたのは、「命を守る」だけでは足りないという現実でした。治っても戻る気になれない患者さん。手取りが増えない共働き世帯。現実を知って行き場を失う子どもたち。医療より先に、社会の仕組みが人を追い詰めています。</p>
+      <p style="margin-bottom:1.1rem;">「効かない政策にお金を使わない」——これが私の出発点です。医師がEBM（根拠に基づく医療）で治療を選ぶように、効果の証明できる政策だけを実行する。働くあなたの<strong>時間・稼ぎ・命</strong>を守るために、科学と現場の経験を持つ医師が議会に必要だと確信しました。</p>
+      <p style="margin-bottom:1.75rem;">一緒に、納税者目線で、新しい福岡市を作っていきましょう。</p>
+      <p style="font-family:'Noto Serif JP',serif;font-size:18px;letter-spacing:.1em;color:var(--navy);">牧嶋　啓</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="sec profile" id="profile">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">PROFILE</span>
+      <span class="sec-label-jp">プロフィール</span>
+    </div>
+
+    <!-- 上段：写真（左）＋ 本文（右） -->
+    <div class="profile-top">
+      <div class="profile-photo">
+        <div class="profile-photo-note">写真</div>
+      </div>
+      <div class="profile-bio">
+        <p>鳥取県出身。18歳で九州大学医学部に進学し、福岡に根を下ろす。24歳から麻酔科医として臨床に従事し、九州大学病院をはじめ福岡市内の主要病院で地域医療を支えてきた。</p>
+        <p>毎日「命の現場」に立ちながら、AIを活用した医学研究にも取り組む。忙しすぎる日々の中で感じてきた「制度の壁」を、政治の力で変えたいと立候補を決意。</p>
+      </div>
+    </div>
+
+    <!-- 全幅オレンジ区切り線 -->
+    <div class="profile-divider"></div>
+
+    <!-- 下段：全幅で詳細ブロック縦積み -->
+    <div class="profile-details">
+      <div class="profile-detail-row">
+        <div class="profile-detail-key">専門</div>
+        <div class="profile-detail-val">麻酔・蘇生学</div>
+      </div>
+      <div class="profile-detail-row">
+        <div class="profile-detail-key">資格</div>
+        <div class="profile-detail-val">麻酔科標榜医・専門医　／　JB-POT　／　USMLE Step 1 / Step 2CK</div>
+      </div>
+      <div class="profile-detail-row">
+        <div class="profile-detail-key">勤務歴</div>
+        <div class="profile-detail-val">九州大学病院・九州医療センター・済生会福岡総合病院・浜の町病院・福岡市民病院</div>
+      </div>
+      <div class="profile-detail-row">
+        <div class="profile-detail-key">研究</div>
+        <div class="profile-detail-val">AI表情解析による疼痛・感情状態の客観的定量化</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POLICY -->
+<section class="sec policy" id="policy">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">POLICY</span>
+      <span class="sec-label-jp">政策</span>
+    </div>
+
+    <div class="policy-quote">「効かない政策にお金を使わない」</div>
+    <p class="policy-sub">——　働く現場の目線で、現役世代の時間・稼ぎ・命を守る3つの柱を掲げます。</p>
+
+    <div class="policy-3">
+      <div class="policy-card navy-top">
+        <div class="policy-card-num">POLICY 01</div>
+        <span class="policy-card-icon">&#128336;</span>
+        <div class="policy-card-tag">時間を守る</div>
+        <div class="policy-card-title">通勤・移動をスムーズに。現役世代の時間を取り戻す</div>
+        <div class="policy-card-body">慢性化する渋滞・通勤ストレスを解消するため、公共交通の利便性向上と道路環境整備を推進。AIを活用した行政業務の効率化により、市役所も市民も「手続きに奪われる時間」を減らします。</div>
+      </div>
+      <div class="policy-card navy-top">
+        <div class="policy-card-num">POLICY 02</div>
+        <span class="policy-card-icon">&#128181;</span>
+        <div class="policy-card-tag">稼ぎを守る</div>
+        <div class="policy-card-title">手取りを増やし、住み続けられる福岡へ</div>
+        <div class="policy-card-body">社会保険料と連動した住民税還付で現役世代の実質賃金を改善。空室・遊休不動産への適切な課税で住宅コストを市民に還元。訪日外国人の受益者負担の適正化により、市民サービスの財源を確保します。</div>
+      </div>
+      <div class="policy-card navy-top">
+        <div class="policy-card-num">POLICY 03</div>
+        <span class="policy-card-icon">&#10084;</span>
+        <div class="policy-card-tag">命を守る</div>
+        <div class="policy-card-title">病気になる前に守る。予防と安心の医療環境を</div>
+        <div class="policy-card-body">医師として見てきた「もっと早く気づけた命」のために、予防医療・かかりつけ医の充実を推進。人生の最終段階を本人の意思で選べる環境を整え、医療費を子育て・教育に振り向けます。</div>
+      </div>
+    </div>
+
+    <div class="policy-extra">
+      <div class="policy-extra-card">
+        <span class="policy-extra-icon">&#127968;</span>
+        <div>
+          <div class="policy-extra-title">市立病院・地域医療ネットワークの充実</div>
+          <div class="policy-extra-body">九州大学病院をはじめ市内主要病院での勤務経験を活かし、地域医療連携の強化と在宅・訪問医療の拡充を推進します。</div>
+        </div>
+      </div>
+      <div class="policy-extra-card">
+        <span class="policy-extra-icon">&#128118;</span>
+        <div>
+          <div class="policy-extra-title">子育て支援と教育環境の整備</div>
+          <div class="policy-extra-body">無駄な医療費・行政コストの削減で生まれた財源を、待機児童解消・学校環境整備・子育て給付に優先配分します。</div>
+        </div>
+      </div>
+      <div class="policy-extra-card">
+        <span class="policy-extra-icon">&#128200;</span>
+        <div>
+          <div class="policy-extra-title">データで証明する行政改革</div>
+          <div class="policy-extra-body">産学連携でAI活用の行政効率化を科学的に測定・検証。「やりました」ではなく「証明しました」から始める政治を実践します。</div>
+        </div>
+      </div>
+      <div class="policy-extra-card">
+        <span class="policy-extra-icon">&#127760;</span>
+        <div>
+          <div class="policy-extra-title">訪日外国人の受益者負担の適正化</div>
+          <div class="policy-extra-body">観光・医療・公共交通における訪日外国人の利用コストを適正化し、市民サービスの質を維持・向上させます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="sec news" id="news">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">NEWS</span>
+      <span class="sec-label-jp">お知らせ・活動報告</span>
+    </div>
+    <a class="news-item" href="#">
+      <span class="news-date">2025.00.00</span>
+      <span class="news-cat">活動</span>
+      <span class="news-title">ホームページを公開しました</span>
+    </a>
+    <a class="news-item" href="#">
+      <span class="news-date">2025.00.00</span>
+      <span class="news-cat">お知らせ</span>
+      <span class="news-title">後援会を設立しました</span>
+    </a>
+    <a class="news-item" href="#">
+      <span class="news-date">2025.00.00</span>
+      <span class="news-cat">活動</span>
+      <span class="news-title">薬院駅前にて街頭演説を行いました</span>
+    </a>
+    <a class="news-item" href="#">
+      <span class="news-date">2025.00.00</span>
+      <span class="news-cat">活動</span>
+      <span class="news-title">赤坂駅前にて辻立ちを行いました</span>
+    </a>
+  </div>
+</section>
+
+<!-- X TIMELINE -->
+<section class="sec x-sec" id="x-timeline">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">X / TIMELINE</span>
+      <span class="sec-label-jp">最新の活動はXで</span>
+    </div>
+    <div class="x-grid">
+      <div>
+        <p class="x-note">街頭活動・政策発信・日々の想いをXで発信しています。フォローして最新情報をお受け取りください。</p>
+        <a href="https://x.com/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:.7rem 1.5rem;font-size:14px;text-decoration:none;letter-spacing:.08em;margin-bottom:1.5rem;">
+          &#x1F426; @makishima_kei をフォロー
+        </a>
+        <p class="x-note" style="margin-top:1rem;">※ Xのアカウント名が確定後、上のリンクとタイムラインを差し替えてください。</p>
+      </div>
+      <div>
+        <!-- X公式タイムライン埋め込み（アカウント確定後にdataの値を差し替え） -->
+        <a class="twitter-timeline"
+           data-height="450"
+           data-theme="light"
+           href="https://x.com/">
+          Xのタイムラインを読み込み中...
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 後援会入会（LINE） -->
+<section class="sec line-sec" id="support-form">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">JOIN US</span>
+      <span class="sec-label-jp">後援会への入会</span>
+    </div>
+    <p class="line-intro">まきしま啓後援会では、一緒に福岡を変えてくれる仲間を募集しています。<br>入会費・年会費は<strong>無料</strong>。LINEから気軽にご参加ください。活動情報もLINEでお届けします。</p>
+
+    <div class="line-cards">
+      <div class="line-card">
+        <div class="line-card-title">&#128241; LINEで友だち追加</div>
+        <div class="line-card-body">下のボタンをタップしてLINE公式アカウントを友だち追加するだけで後援会に参加できます。入力フォーム不要・１秒で完了。</div>
+        <!-- LINE公式アカウント作成後、href の YOUR_LINE_ID を差し替え -->
+        <a class="line-add-btn" href="https://line.me/R/ti/p/@YOUR_LINE_ID" target="_blank" rel="noopener">
+          友だち追加して後援会に入る
+        </a>
+        <ol class="line-steps">
+          <li><span class="line-step-num">1</span>上のボタンをタップ</li>
+          <li><span class="line-step-num">2</span>LINEアプリが開く</li>
+          <li><span class="line-step-num">3</span>「友だち追加」をタップ</li>
+          <li><span class="line-step-num">4</span>完了！活動情報が届きます</li>
+        </ol>
+      </div>
+      <div class="line-card">
+        <div class="line-card-title">&#128247; QRコードで追加</div>
+        <div class="line-card-body">スマホのカメラでQRコードを読み取ってもご参加いただけます。ポスターやチラシのQRコードも同じです。</div>
+        <!-- LINE公式アカウント作成後、QRコード画像に差し替え -->
+        <div class="line-qr">QRコード<br>（作成後に差し替え）</div>
+        <div class="line-card-body" style="font-size:13px;margin-top:.5rem">
+          &#x1F4AC; LINEアカウント：<strong>@makishima_kei</strong><br>
+          <span style="font-size:12px;color:var(--muted)">※アカウント確定後に更新</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">CONTACT</span>
+      <span class="sec-label-jp">お問い合わせ・事務所</span>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="office-label">OFFICE</div>
+        <div class="office-info">
+          まきしま啓 後援会事務所<br>
+          〒810-00XX<br>
+          福岡市中央区○○<br><br>
+          info@makishima-kei.jp<br>
+          000-0000-0000
+        </div>
+      </div>
+      <div>
+        <div class="form-row">
+          <label>お名前</label>
+          <input type="text" placeholder="山田 太郎">
+        </div>
+        <div class="form-row">
+          <label>メールアドレス</label>
+          <input type="email" placeholder="example@mail.com">
+        </div>
+        <div class="form-row">
+          <label>内容</label>
+          <textarea placeholder="ご意見・ご質問をお書きください"></textarea>
+        </div>
+        <button class="form-submit">送信する</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © <span>まきしま　啓</span>｜国民民主党　福岡市議会議員候補（中央区）｜まきしま啓後援会</footer>
+
+</body>
+</html>
