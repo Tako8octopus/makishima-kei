@@ -184,6 +184,11 @@ footer span{color:var(--orange)}
 .line-steps li{font-size:14px;color:#3a3a3a;padding:.5rem 0;border-bottom:1px solid var(--bd);display:flex;gap:.75rem;align-items:baseline}
 .line-steps li:last-child{border-bottom:none}
 .line-step-num{color:var(--orange);font-weight:500;font-size:13px;flex-shrink:0;min-width:24px}
+@media(max-width:640px){
+  .line-cards{
+    grid-template-columns:1fr;
+  }
+}
 
 /* ========== X TIMELINE ========== */
 .x-sec{background:var(--light)}
