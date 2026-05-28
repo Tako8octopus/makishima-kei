@@ -195,6 +195,14 @@ footer span{color:var(--orange)}
 .x-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .x-note{font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.8}
 .x-embed{background:var(--white);border:1px solid var(--bd);padding:1.5rem;text-align:center;color:var(--muted);font-size:13px;min-height:400px;display:flex;align-items:center;justify-content:center}
+@media(max-width:640px){
+  .line-cards{
+    grid-template-columns:1fr;
+  }
+  .x-grid{
+    grid-template-columns:1fr;
+  }
+}
 
 /* ========== 後援会入会フォーム ========== */
 .support-form-sec{background:var(--white)}
