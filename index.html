@@ -56,6 +56,19 @@ body{font-family:var(--sans);background:var(--white);color:var(--text)}
 .hero-name{color:var(--white);font-family:var(--serif);font-size:36px;font-weight:300;letter-spacing:.16em;margin-bottom:.3rem}
 .hero-en{color:rgba(255,255,255,.28);font-size:12px;letter-spacing:.22em;margin-bottom:1.6rem}
 
+.hero-join-btn{
+  display:inline-block;
+  margin-top:1.5rem;
+  background:#06c755;
+  color:#fff;
+  padding:.75rem 2rem;
+  font-size:14px;
+  letter-spacing:.1em;
+  text-decoration:none;
+  font-weight:500;
+  transition:opacity .2s;
+}
+.hero-join-btn:hover{opacity:.85}
 
 
 
@@ -256,24 +269,25 @@ footer span{color:var(--orange)}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <!-- 写真差し替え時: このdivを削除し .hero-bg に background-image:url('photo.jpg'); background-size:cover; を追加 -->
     <div class="hero-bg-note">候補者写真（全画面）</div>
     <div class="hero-bg-sub">実際の写真に差し替え後 overlay で調整</div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-area"><span class="hero-sep"></span>福岡議会議員候補　区</div>
+    <div class="hero-area"><span class="hero-sep"></span>福岡県議会議員候補　東区</div>
     <div class="hero-catch">
       政治は、<br>
       <em>働くあなたの</em><br>
-    ために
+      ために。
     </div>
     <div class="hero-bar"></div>
     <div class="hero-ruby">まきしま　けい</div>
     <div class="hero-name">牧嶋　啓</div>
     <div class="hero-en">KEI MAKISHIMA</div>
-    </div>
+    <a href="#support-form" class="hero-join-btn">▼ 後援会に参加する</a>
+  </div>
 </section>
+
 
 <!-- GREETING -->
 <section class="greet">
