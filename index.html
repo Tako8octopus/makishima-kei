@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>まきしま 啓 公式サイト｜国民民主党 福岡県政策委員</title>
+<title>まきしま 啓 公式サイト｜国民民主党公認・福岡市議会議員候補（中央区）</title>
+<meta name="description" content="医療も、行政も、建物の外へ。呼ばれる前に、あなたの元へ。現役麻酔科医・まきしま啓。国民民主党公認、福岡市議会議員候補（中央区）。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,240 +18,165 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--white);color:var(--text)}
 
-/* ========== NAV ========== */
-.nav{
-  background:var(--navy);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 2rem;height:58px;
-  position:sticky;top:0;z-index:100;
-}
+/* NAV */
+.nav{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:58px;position:sticky;top:0;z-index:100}
 .nav-logo{color:var(--white);font-family:var(--serif);font-size:15px;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
-.nav-badge{background:#f5b500;color:#111111;font-size:12px;padding:4px 12px;letter-spacing:.08em;white-space:nowrap;font-weight:700}
+.nav-badge{background:#f5b500;color:#111;font-size:12px;padding:4px 12px;letter-spacing:.08em;white-space:nowrap;font-weight:700}
 .nav-links{display:flex;gap:1.75rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;letter-spacing:.08em;transition:color .2s}
 .nav-links a:hover{color:var(--orange2)}
 
-/* ========== HERO ========== */
-.hero{
-  background:var(--navy2);
-  position:relative;min-height:620px;
-  display:flex;align-items:flex-end;
-}
-.hero-bg{position:absolute;inset:0;background:var(--navy2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;overflow:hidden}
-/* 実際の写真に差し替え時: .hero-bg に background-image を設定、background-size:cover */
-.hero-bg-note{color:rgba(255,255,255,.2);font-size:14px;letter-spacing:.14em}
-.hero-bg-sub{color:rgba(255,255,255,.11);font-size:11px}
+/* HERO */
+.hero{background:var(--navy2);position:relative;min-height:620px;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background:var(--navy2);background-size:cover}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,62,128,.65) 42%,rgba(4,62,128,.05) 100%)}
-.hero-content{
-  position:relative;z-index:2;
-  width:100%;padding:3.5rem 2.5rem;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  max-width:560px;
-}
+.hero-content{position:relative;z-index:2;width:100%;padding:3.5rem 2.5rem;display:flex;flex-direction:column;justify-content:flex-end;max-width:600px}
 .hero-area{color:rgba(255,255,255,.5);font-size:13px;letter-spacing:.1em;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
 .hero-sep{width:24px;height:1px;background:var(--orange);flex-shrink:0}
-.hero-catch{font-family:var(--serif);font-size:36px;font-weight:200;color:var(--white);line-height:1.95;letter-spacing:.06em;margin-bottom:2rem}
+.hero-catch{font-family:var(--serif);font-size:36px;font-weight:200;color:var(--white);line-height:1.95;letter-spacing:.06em;margin-bottom:1.25rem}
 .hero-catch em{color:var(--orange2);font-style:normal}
+.hero-sub{font-family:var(--serif);font-size:19px;font-weight:200;color:rgba(255,255,255,.72);letter-spacing:.1em;line-height:1.9;margin-bottom:2rem}
 .hero-bar{width:36px;height:3px;background:var(--orange);margin-bottom:1.6rem}
-.hero-ruby{color:rgba(255,255,255,.6);font-size:16px;letter-spacing:.24em;margin-bottom:.3rem;font-family:var(--serif)}
-.hero-name{
-  color:rgba(255,255,255,.9);
-  font-family:var(--serif);
-  font-size:48px;
-  font-weight:400;
-  letter-spacing:.16em;
-  margin-bottom:.3rem;
-}
-.hero-en{color:rgba(255,255,255,.28);font-size:12px;letter-spacing:.22em;margin-bottom:1.6rem}
-
-.hero-join-btn{
-  display:inline-block;
-  margin-top:1.5rem;
-  background:#0a5aab;
-  color:#fff;
-  padding:.75rem 2rem;
-  font-size:14px;
-  letter-spacing:.1em;
-  text-decoration:none;
-  font-weight:500;
-  transition:opacity .2s;
-}
+.hero-name{color:rgba(255,255,255,.9);font-family:var(--serif);font-size:48px;font-weight:400;letter-spacing:.16em;margin-bottom:.3rem}
+.hero-en{color:rgba(255,255,255,.28);font-size:12px;letter-spacing:.22em;margin-bottom:.9rem}
+.hero-role{color:rgba(255,255,255,.55);font-size:13px;letter-spacing:.06em;line-height:1.9}
+.hero-join-btn{display:inline-block;margin-top:1.5rem;background:#0a5aab;color:#fff;padding:.75rem 2rem;font-size:14px;letter-spacing:.1em;text-decoration:none;font-weight:500;transition:opacity .2s;align-self:flex-start}
 .hero-join-btn:hover{opacity:.85}
 
-
-
-/* ========== GREETING ========== */
+/* GREETING */
 .greet{background:var(--light);padding:4.5rem 2rem}
 .greet-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:3px 1fr;gap:2rem;align-items:start}
 .greet-bar{background:var(--orange);min-height:60px}
-.greet-text{font-size:15px;color:var(--muted);font-style:italic;line-height:2}
+.greet-text{color:#3a3a3a;font-size:16px;line-height:2.2}
+.greet-text p{margin-bottom:1.6rem}
+.greet-sign{font-family:var(--serif);font-size:18px;letter-spacing:.1em;color:var(--navy);margin-top:2rem}
 
-/* ========== SECTION BASE ========== */
+/* SECTION */
 .sec{padding:5rem 2rem}
 .sec-inner{max-width:920px;margin:0 auto}
 .sec-label{display:flex;align-items:baseline;gap:.75rem;margin-bottom:3rem;padding-bottom:1rem;border-bottom:2px solid var(--orange)}
 .sec-label-en{color:var(--orange);font-size:14px;letter-spacing:.22em;font-weight:500}
 .sec-label-jp{color:var(--muted);font-size:14px}
 
-/* ========== PROFILE ========== */
+/* PROFILE */
 .profile{background:var(--white)}
-
-/* 上段: 写真 + 本文 横並び */
-.profile-top{
-  display:grid;
-  grid-template-columns:240px 1fr;
-  gap:3rem;
-  align-items:start;
-}
-.profile-photo{
-  width:240px;height:295px;
-  background:var(--navy2);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.profile-photo-note{color:rgba(255,255,255,.28);font-size:13px;letter-spacing:.1em}
+.profile-top{display:grid;grid-template-columns:240px 1fr;gap:3rem;align-items:start}
+.profile-photo{width:240px;height:295px;background:var(--navy2);flex-shrink:0}
 .profile-bio p{font-size:16px;line-height:2.2;color:#3a3a3a;margin-bottom:.85rem}
 .profile-bio p:last-child{margin-bottom:0}
-
-/* 全幅オレンジ区切り線 */
 .profile-divider{height:4px;background:var(--orange);margin-top:2.5rem}
-
-/* 下段: 全幅 詳細ブロック 縦積み */
 .profile-details{display:flex;flex-direction:column}
-.profile-detail-row{
-  border-left:3px solid var(--orange);
-  padding:.9rem 1.2rem;
-  background:var(--light);
-  border-bottom:1px solid var(--bd);
-  display:flex;gap:1rem;align-items:baseline;
-}
+.profile-detail-row{border-left:3px solid var(--orange);padding:.9rem 1.2rem;background:var(--light);border-bottom:1px solid var(--bd);display:flex;gap:1rem;align-items:baseline}
 .profile-detail-row:last-child{border-bottom:none}
 .profile-detail-key{font-size:13px;color:var(--orange);font-weight:500;letter-spacing:.1em;min-width:52px;flex-shrink:0}
 .profile-detail-val{font-size:15px;color:var(--text);line-height:1.85}
 
-/* ========== POLICY ========== */
+/* POLICY */
 .policy{background:var(--light)}
 .policy-quote{font-size:18px;font-family:var(--serif);font-weight:300;color:var(--navy);border-left:3px solid var(--orange);padding:.6rem 1.1rem;margin-bottom:.9rem}
 .policy-sub{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:2.5rem}
 
-/* 3柱カード */
-.policy-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-bottom:1.5rem}
-.policy-card{background:var(--white);border-top:4px solid var(--orange);padding:1.75rem 1.5rem}
-.policy-card.navy-top{border-top-color:var(--navy)}.policy-card.accent-top{border-top-color:var(--orange)}
-.policy-card-num{font-size:11px;color:var(--orange);letter-spacing:.2em;font-weight:500;margin-bottom:.5rem}
-.policy-card-icon{font-size:22px;margin-bottom:.6rem;display:block}
-.policy-card-tag{
-  display:block;font-family:var(--serif);
-  font-size:18px;font-weight:500;color:var(--navy);
-  letter-spacing:.06em;margin-bottom:.75rem;line-height:1.4;
-}
-.policy-card.navy-top .policy-card-tag{color:var(--navy)}
-.policy-card-title{font-size:14px;font-weight:500;color:var(--navy);line-height:1.75;margin-bottom:.75rem}
-.policy-card-body{font-size:14px;line-height:1.95;color:var(--muted)}
+.pcard{background:var(--white);border-top:4px solid var(--navy);padding:2.25rem 2rem;margin-bottom:1.25rem}
+.pcard-num{font-size:11px;color:var(--orange);letter-spacing:.2em;font-weight:500;margin-bottom:1rem}
+.pcard-verb{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--navy);letter-spacing:.12em;line-height:1.5}
+.pcard-tag{font-family:var(--serif);font-weight:300;font-size:18px;color:var(--muted);letter-spacing:.1em;margin-top:.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bd);margin-bottom:1.75rem}
 
-/* 追加政策 */
-.policy-extra{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.policy-extra-card{background:var(--white);border-left:4px solid var(--orange);padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start}
-.policy-extra-icon{font-size:20px;flex-shrink:0;margin-top:2px}
-.policy-extra-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:.4rem}
-.policy-extra-body{font-size:14px;color:var(--muted);line-height:1.85}
+.pblock{margin-bottom:1.75rem}
+.pblock:last-child{margin-bottom:0}
+.pblock-key{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.8rem}
+.pblock p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.8rem}
+.pblock p:last-child{margin-bottom:0}
+.pblock ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:1rem}
+.pblock ol li{counter-increment:s;font-size:14px;line-height:2.05;color:#3a3a3a;padding-left:2rem;position:relative}
+.pblock ol li:before{content:counter(s);position:absolute;left:0;top:.1em;color:var(--orange);font-family:var(--serif);font-size:15px}
 
-/* ========== SUPPORT ========== */
-.support{background:var(--navy);padding:6rem 2rem;text-align:center;position:relative;overflow:hidden}
-.support-ring1{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:580px;height:580px;border-radius:50%;border:1px solid rgba(240,120,0,.1);pointer-events:none}
-.support-ring2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:380px;height:380px;border-radius:50%;border:1px solid rgba(240,120,0,.07);pointer-events:none}
-.support-inner{max-width:540px;margin:0 auto;position:relative}
-.support-en{color:var(--orange2);font-size:11px;letter-spacing:.3em;margin-bottom:.9rem}
-.support-title{color:var(--white);font-family:var(--serif);font-size:26px;font-weight:200;line-height:2;margin-bottom:2rem}
-.support-title em{color:var(--orange2);font-style:normal}
-.support-btn{display:inline-block;padding:.85rem 3rem;border:1px solid var(--orange);color:var(--orange2);font-size:14px;letter-spacing:.14em;text-decoration:none;transition:all .2s}
-.support-btn:hover{background:var(--orange);color:var(--white)}
+/* 要件リスト */
+.cond{background:var(--light);padding:1.1rem 1.3rem;margin:1rem 0}
+.cond-t{font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:.7rem}
+.cond ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.cond li{font-size:13px;line-height:1.85;color:#3a3a3a;padding-left:1.4rem;position:relative}
+.cond li:before{content:"×";position:absolute;left:0;color:var(--orange);font-weight:700}
 
-/* ========== CONTACT ========== */
+/* KGI */
+.kgi{border-top:1px solid var(--bd)}
+.kgi-row{border-bottom:1px solid var(--bd);padding:1.1rem 0}
+.kgi-what{font-family:var(--serif);font-weight:400;font-size:15px;color:var(--navy);letter-spacing:.02em;line-height:1.8;margin-bottom:.6rem}
+.kgi-nums{display:grid;grid-template-columns:1fr 24px 1fr;gap:.75rem;align-items:center}
+.kgi-cell{padding:.55rem .75rem;background:var(--light);font-size:13px;line-height:1.7;color:#3a3a3a}
+.kgi-cell .lb{display:block;font-size:10px;letter-spacing:.16em;color:var(--muted);margin-bottom:.2rem}
+.kgi-cell.goal{background:rgba(245,181,0,.14)}
+.kgi-cell.goal .lb{color:#a07600}
+.kgi-cell b{font-weight:700;color:var(--text)}
+.kgi-arrow{text-align:center;color:var(--orange);font-size:14px}
+.kgi-note{font-size:12px;color:var(--muted);line-height:1.85;margin-top:.6rem}
+
+/* Q&A */
+.qa-wrap{border-top:1px solid var(--bd);padding-top:1.5rem;margin-top:1.75rem}
+.qa{padding:.9rem 0;border-bottom:1px solid var(--bd)}
+.qa:last-child{border-bottom:none;padding-bottom:0}
+.qa-q{font-size:14px;color:var(--navy);line-height:1.8;margin-bottom:.45rem}
+.qa-q:before{content:"Q.　";color:var(--orange);font-weight:700}
+.qa-a{font-size:14px;color:#3a3a3a;line-height:2}
+.qa-a:before{content:"A.　";color:var(--muted);font-weight:700}
+
+/* MEANS */
+.means{background:var(--white)}
+.mcard{border-left:4px solid var(--orange);background:var(--light);padding:2rem;margin-bottom:1.25rem}
+.mcard-key{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.8rem}
+.mcard-title{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--navy);letter-spacing:.08em;line-height:1.7;margin-bottom:1.25rem}
+.mcard p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.8rem}
+.mcard p:last-of-type{margin-bottom:0}
+.mcard .kgi{margin-top:1.5rem;border-top:1px solid var(--bd)}
+.mcard .kgi-cell{background:var(--white)}
+.mcard .kgi-cell.goal{background:rgba(245,181,0,.18)}
+
+/* LINE */
+.line-sec{background:var(--light)}
+.line-intro{font-size:16px;color:#3a3a3a;line-height:2;margin-bottom:2.5rem}
+.line-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.line-card{background:var(--white);padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem}
+.line-card-title{font-size:15px;color:var(--navy);letter-spacing:.06em}
+.line-add-btn{display:inline-block;background:#06c755;color:#fff;padding:.85rem 2rem;font-size:15px;letter-spacing:.06em;text-decoration:none;font-weight:500;transition:opacity .2s}
+.line-add-btn:hover{opacity:.85}
+
+/* X */
+.x-sec{background:var(--white)}
+.x-note{font-size:14px;color:var(--muted);margin-bottom:1.25rem;line-height:1.9}
+
+/* CONTACT */
 .contact{background:var(--light)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 .office-label{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.6rem}
 .office-info{font-size:15px;line-height:2.4;color:#3a3a3a}
-.contact .form-row{margin-bottom:1.1rem}
-.contact .form-row input,.contact .form-row textarea{background:var(--white)}
-.contact .form-row textarea{height:100px;resize:vertical}
-.contact .form-submit{background:var(--navy);color:var(--white);border:none;padding:.8rem 2.25rem;font-size:14px;letter-spacing:.12em;cursor:pointer;font-family:var(--sans);transition:background .2s}
-.contact .form-submit:hover{background:var(--navy3)}
-
-/* ========== FOOTER ========== */
-footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:1.75rem;font-size:12px;letter-spacing:.08em}
-footer span{color:var(--orange)}
-
-
-/* ========== LINE 後援会 ========== */
-.line-sec{background:var(--white)}
-.line-intro{font-size:16px;color:#3a3a3a;line-height:2;margin-bottom:2.5rem}
-.line-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
-.line-card{background:var(--light);padding:2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem}
-.line-card-title{font-size:16px;font-weight:500;color:var(--navy)}
-.line-card-body{font-size:14px;color:var(--muted);line-height:1.85}
-.line-add-btn{display:inline-block;background:#06c755;color:#fff;padding:.85rem 2rem;font-size:15px;letter-spacing:.06em;text-decoration:none;font-weight:500;transition:opacity .2s}
-.line-add-btn:hover{opacity:.85}
-.line-qr{width:160px;height:160px;background:#fff;border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
-.line-steps{list-style:none;text-align:left;width:100%}
-.line-steps li{font-size:14px;color:#3a3a3a;padding:.5rem 0;border-bottom:1px solid var(--bd);display:flex;gap:.75rem;align-items:baseline}
-.line-steps li:last-child{border-bottom:none}
-.line-step-num{color:var(--orange);font-weight:500;font-size:13px;flex-shrink:0;min-width:24px}
-@media(max-width:640px){
-  .line-cards{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ========== X TIMELINE ========== */
-.x-sec{background:var(--light)}
-.x-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.x-note{font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.8}
-.x-embed{background:var(--white);border:1px solid var(--bd);padding:1.5rem;text-align:center;color:var(--muted);font-size:13px;min-height:400px;display:flex;align-items:center;justify-content:center}
-@media(max-width:640px){
-  .line-cards{
-    grid-template-columns:1fr;
-  }
-  .x-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ========== 後援会入会フォーム ========== */
-.support-form-sec{background:var(--white)}
-.support-form-intro{font-size:16px;color:#3a3a3a;line-height:2;margin-bottom:2.5rem}
-.support-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.support-form-grid .form-row-full{grid-column:1/-1}
-.form-row{margin-bottom:0}
-.form-row label{display:block;font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:.35rem}
-.form-row input,.form-row select,.form-row textarea{width:100%;border:1px solid var(--bd);padding:.65rem .8rem;font-size:15px;background:var(--light);font-family:var(--sans);color:var(--text)}
-.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c5c5c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;padding-right:2.5rem}
-.form-row textarea{height:100px;resize:vertical}
-.form-check{display:flex;align-items:flex-start;gap:.6rem;font-size:13px;color:#3a3a3a;line-height:1.7;margin:1rem 0}
-.form-check input[type=checkbox]{margin-top:3px;flex-shrink:0;accent-color:var(--navy)}
-.form-submit-wrap{margin-top:1.5rem;text-align:center}
 .form-submit{background:var(--navy);color:var(--white);border:none;padding:.9rem 3rem;font-size:15px;letter-spacing:.12em;cursor:pointer;font-family:var(--sans);transition:background .2s}
 .form-submit:hover{background:var(--navy3)}
-.form-note{font-size:12px;color:var(--muted);margin-top:.75rem;text-align:center}
 
-/* ========== RESPONSIVE ========== */
+footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:1.75rem;font-size:12px;letter-spacing:.08em}
+footer span{color:var(--orange)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
 @media(max-width:768px){
   .nav-links{display:none}
   .hero{min-height:480px}
   .hero-catch{font-size:26px}
+  .hero-sub{font-size:16px}
   .hero-name{font-size:28px}
   .hero-content{padding:2rem 1.5rem}
   .profile-top{grid-template-columns:1fr;gap:1.5rem}
   .profile-photo{width:100%;height:250px}
-  .policy-3{grid-template-columns:1fr}
-  .policy-extra{grid-template-columns:1fr}
+  .pcard{padding:1.75rem 1.35rem}
+  .pcard-verb{font-size:24px}
+  .mcard{padding:1.75rem 1.35rem}
+  .kgi-nums{grid-template-columns:1fr;gap:.4rem}
+  .kgi-arrow{text-align:left;transform:rotate(90deg);width:1em}
+  .line-cards{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
     <span class="nav-badge">国民民主党公認</span>
@@ -260,49 +186,49 @@ footer span{color:var(--orange)}
     <li><a href="#top">Top</a></li>
     <li><a href="#profile">Profile</a></li>
     <li><a href="#policy">Policy</a></li>
-    <li><a href="#news">News</a></li>
+    <li><a href="#means">実行と責任</a></li>
     <li><a href="#support-form">後援会</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="top">
-<div class="hero-bg" style="background-image:url('DSC_5092.JPG');background-size:cover;background-position:65% 20%;"></div>
+  <div class="hero-bg" style="background-image:url('DSC_5092.JPG');background-position:65% 20%;"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-area"><span class="hero-sep"></span>国民民主党　福岡県政策委員</div>
+    <div class="hero-area"><span class="hero-sep"></span>福岡市議会議員候補　中央区</div>
     <div class="hero-catch">
-      政治は、<br>
-      <em>働くあなたの</em><br>
-      ために。
+      医療も、行政も、<br>
+      <em>建物の外へ。</em>
     </div>
+    <div class="hero-sub">呼ばれる前に、あなたの元へ。</div>
     <div class="hero-bar"></div>
     <div class="hero-name">まきしま　啓</div>
     <div class="hero-en">KEI MAKISHIMA</div>
+    <div class="hero-role">現役麻酔科医　／　麻酔科専門医・標榜医<br>九州大学大学院　医学研究院</div>
     <a href="#support-form" class="hero-join-btn">▼ 後援会に参加する</a>
   </div>
 </section>
-
 
 <!-- GREETING -->
 <section class="greet">
   <div class="greet-inner">
     <div class="greet-bar"></div>
-    <div class="greet-text" style="font-style:normal;color:#3a3a3a;font-size:16px;line-height:2.2;">
-      <p style="margin-bottom:1.1rem;">皆様、はじめまして。</p>
-      <p style="margin-bottom:1.1rem;">まきしま啓と申します。</p>
-      <p style="margin-bottom:1.1rem;">私が医者を志したのは、父がCRPS（難治性の慢性疼痛）を患ったからです。「治らない病気を治したい。」その一心で九州大学医学部に進み、麻酔科医として福岡の医療現場に立ち続けました。しかし、どうしても、父を治せませんでした。</p>
-      <p style="margin-bottom:1.1rem;">しかし、孫の笑顔が、父を救いました。治らない痛みの中でも、孫の笑顔が生きる希望を与えた。その姿を見て気づいたのです。生きる希望が、家族の笑顔が、命を守ることに。</p>
-      <p style="margin-bottom:1.1rem;">子どもが笑えるのは、家庭が守られているからです。家庭が守られるのは、働く親が安心して働けるからです。今の日本はどうでしょうか。必死に働いても手取りは増えない。生活に余裕がない。皺寄せは子どもと家族へ。</p>
-      <p style="margin-bottom:1.1rem;">医療の現場で私が見てきたのは、社会の仕組みに追い詰められた家族の姿でした。喧嘩が増える。社会から孤立する。接し方が分からない。病気のサインを見落とす。それは決して個人の力不足ではなく、政治が働く人のために機能していないからだと、今は確信しています。</p>
-      <p style="margin-bottom:1.1rem;"><strong>政治は、働くあなたのために。</strong></p>
-      <p style="margin-bottom:1.1rem;">子どもと家庭の笑顔を守る。働くあなたの手取りを増やす。現役世代が政治を変える。この3つを胸に、私は東区から福岡県議会に挑みます。</p>
-      <p style="margin-bottom:1.75rem;">医師として現場を見てきた私だからこそ、できることがあると信じています。しかし新人の私一人では何もできません。どうか力を貸してください。一緒に、働くあなたのための政治を作りましょう。</p>
-      <p style="font-family:'Noto Serif JP',serif;font-size:18px;letter-spacing:.1em;color:var(--navy);">牧嶋　啓</p>
+    <div class="greet-text">
+      <p>私が医師を志したのは、父が治らない痛みを抱えたからでした。</p>
+      <p>CRPS－－難治性の慢性疼痛。「治らない病気を治したい」。その一心で九州大学医学部に進み、麻酔科医になりました。それでも、父は治せませんでした。</p>
+      <p>父を救ったのは、私ではありません。孫の笑顔でした。痛みは治らない。人生は戻らない。それでも生きようとしている。私は、医学の外にあるものを見たのです。</p>
+      <p>人を生かすのは、家族の笑顔です。</p>
+      <p>麻酔科医は、呼ばれてから駆けつける仕事です。</p>
+      <p>手術室で、救急で、「もっと早ければ」と思う場面は何度もありました。エアコンもつけずに一人で倒れる高齢者、自殺を試みて取り返しのつかない傷を負った子ども。医学は進歩しました。それでも、間に合わなければ、意味がない。</p>
+      <p>行政も、同じではないでしょうか。制度はあります。窓口もあります。しかし、そこへ来られる人しか、救っていない。助けを求める力が残っていない人が、確実にいます。</p>
+      <p>医療も、行政も、建物の中で待っているかぎり、間に合わない。</p>
+      <p>私は今も、手術室に立っています。現場を離れません。離れることができません。だからこそ外へ出たい。声も出せずに苦しむ人が、手遅れになる前に。</p>
+      <p>呼ばれる前に、あなたの元へ。</p>
+      <p class="greet-sign">牧嶋　啓</p>
     </div>
   </div>
 </section>
-
 
 <!-- PROFILE -->
 <section class="sec profile" id="profile">
@@ -312,23 +238,20 @@ footer span{color:var(--orange)}
       <span class="sec-label-jp">プロフィール</span>
     </div>
 
-    <!-- 上段：写真（左）＋ 本文（右） -->
     <div class="profile-top">
-    <div class="profile-photo">
-      <img src="profile2.png" alt="牧嶋啓" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-    </div>
+      <div class="profile-photo">
+        <img src="profile2.png" alt="牧嶋啓" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
       <div class="profile-bio">
-        <p>鳥取県出身。18歳で九州大学医学部に進学し、福岡に根を下ろす。24歳から研修医/麻酔科医として臨床に従事し、九州大学病院をはじめ福岡市内の主要病院で地域医療を支えてきた。</p>
-        <p>毎日「命の現場」に立ちながら、AIを活用した医学研究にも取り組む。診療と研究の現場で、医療の力だけでは救えない現実を見続け、その壁を、政治の力で打破したいと立候補を決意。</p>
+        <p>鳥取県出身。18歳で九州大学医学部に進学し、福岡に根を下ろす。24歳から麻酔科医として臨床に従事。九州大学病院をはじめ福岡市内の主要病院で、命の現場に立ち続けてきた。現在も、麻酔科医として現場に立っている。</p>
+        <p>大学院ではAIを用いた医学研究に取り組む。研究テーマは「AI表情解析による疼痛の客観的定量化」。言葉にできない痛みを、数字にする研究。</p>
         <p>得意料理は高菜チャーハン。趣味は将棋。大学時代はラグビー部で肉体改造を試みるも、腰痛が悪化して「歩くネガティブキャンペーン」と揶揄される事態に。4年で挫折。</p>
         <p>米国医師国家試験には合格するも米国での就活には失敗。一時は学内トップの成績となることもあったが、研究分野ではAIの分析力に完敗する。好きな言葉は不撓不屈。</p>
       </div>
     </div>
 
-    <!-- 全幅オレンジ区切り線 -->
     <div class="profile-divider"></div>
 
-    <!-- 下段：全幅で詳細ブロック縦積み -->
     <div class="profile-details">
       <div class="profile-detail-row">
         <div class="profile-detail-key">専門</div>
@@ -336,7 +259,7 @@ footer span{color:var(--orange)}
       </div>
       <div class="profile-detail-row">
         <div class="profile-detail-key">資格</div>
-        <div class="profile-detail-val">麻酔科標榜医・専門医　／　JB-POT　／　USMLE Step 1 & Step 2CK </div>
+        <div class="profile-detail-val">麻酔科標榜医・専門医　／　JB-POT　／　USMLE Step 1 &amp; Step 2CK</div>
       </div>
       <div class="profile-detail-row">
         <div class="profile-detail-key">勤務歴</div>
@@ -347,7 +270,6 @@ footer span{color:var(--orange)}
         <div class="profile-detail-val">AI表情解析による疼痛・感情状態の客観的定量化</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -358,105 +280,285 @@ footer span{color:var(--orange)}
       <span class="sec-label-en">POLICY</span>
       <span class="sec-label-jp">政策</span>
     </div>
-    <div class="policy-quote"><strong>実行の政治から、証明の政治へ。</strong></div>
-    <p class="policy-sub">——　現役世代の医師として、家族・手取り・政治の刷新、3つの柱を掲げます。</p>
+    <div class="policy-quote">実行の政治から、証明の政治へ。</div>
+    <p class="policy-sub">——実行ではなく、効果を問う。今の数字を出した上で、4年後の数字から逃げません。</p>
 
-    <div class="policy-3">
-      <div class="policy-card navy-top">
-        <div class="policy-card-num">POLICY 01</div>
-        <span class="policy-card-icon">&#128118;</span>
-        <div class="policy-card-tag">子どもと家庭の笑顔を守る</div>
-        <div class="policy-card-body"><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem"><li>養護教諭・保健師・児童精神科の連携で不登校を早期発見</li><li>「研究参加」という入口で子どもを支援動線に繋げる</li><li>九大等との官学連携でデータに基づく政策にフィードバック</li><li>福岡県の中学校不登校率、全国ワースト2位を変える</li></ul></div>
+    <!-- 01 -->
+    <div class="pcard">
+      <div class="pcard-num">POLICY 01</div>
+      <div class="pcard-verb">天神で過ごす</div>
+      <div class="pcard-tag">涼しい福岡を</div>
+
+      <div class="pblock">
+        <div class="pblock-key">起きていること</div>
+        <p>夏、子どもが公園で遊べなくなりました。そして熱中症で亡くなる方の多くは、家の中で、エアコンをつけずに倒れています。</p>
+        <p>福岡市の熱中症対策は、デジタルサイネージ、SNS、出前講座、LINE配信、のぼり、リーフレット。クールシェア860施設。すべて「知らせること」です。</p>
+        <p>知らせても、エアコンをつけない人がいます。日陰も、公園の対策も、訪問も、必要です。どの公園が危険なのかを、測ることから始めませんか。</p>
       </div>
-      <div class="policy-card navy-top">
-        <div class="policy-card-num">POLICY 02</div>
-        <span class="policy-card-icon">&#128181;</span>
-        <div class="policy-card-tag">働くあなたの手取りを増やす</div>
-        <div class="policy-card-body"><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem"><li>国政と連動した住民税減税の実現</li><li>宿泊税引き上げでインフラ財源を確保</li><li>外国人医療費の未払い防止・国への法整備要求</li><li>財政分配の見直しで現役世代への還元を優先</li></ul></div>
+
+      <div class="pblock">
+        <div class="pblock-key">今の数字と、4年後の約束</div>
+        <div class="kgi">
+          <div class="kgi-row">
+            <div class="kgi-what">公園ごとの暑さ指数（WBGT）の公開率</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　測っていません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">4年後</span><b>100%</b>　全公園で公開</div>
+            </div>
+          </div>
+          <div class="kgi-row">
+            <div class="kgi-what">暑さ指数あたりの、熱中症救急搬送者数</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span>検討されていません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">4年後</span><b>指数の作成と相対的減少</b></div>
+            </div>
+            <p class="kgi-note">搬送者の数そのものは、気温で決まります。猛暑の年は必ず増える。だから「同じ暑さの日に、何人運ばれたか」で測ります。天候ではなく、対策の効果だけが出ます。1年目に測り、2年目から比べます。</p>
+          </div>
+        </div>
       </div>
-      <div class="policy-card navy-top">
-        <div class="policy-card-num">POLICY 03</div>
-        <span class="policy-card-icon">&#128228;</span>
-        <div class="policy-card-tag">現役世代が政治を変える</div>
-        <div class="policy-card-body"><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem"><li>情報連携で行政と医療の断絶を解消する</li><li>政策効果の科学的測定・根拠と証明を求める議会へ</li><li>教育・医療・福祉の縦割りを繋ぎ直す</li><li>カスハラ定義と罰則運用で現場を守る</li></ul></div>
+
+      <div class="pblock">
+        <div class="pblock-key">やること</div>
+        <ol>
+          <li><b>公園ごとに暑さを測り、公開する。</b>外出自粛を熱中症対策の最後の砦にしたい。</li>
+          <li><b>日陰をつくる。</b>木を切りすぎない剪定に変える。遊具の表面温度を測り、危険な遊具に日除けをつける。</li>
+          <li><b>財源は、宿泊税。</b>福岡市の宿泊税は2万円未満で200円のまま、2020年から動いていません。観光客が増えて暑くなった街の対策費を、市民ではなく観光客に払ってもらいます。</li>
+        </ol>
+      </div>
+
+      <div class="qa-wrap">
+        <div class="qa">
+          <div class="qa-q">水遊び場や噴水はつくらないのですか。</div>
+          <div class="qa-a">1か所に数千万円かかります。同じお金があれば、公園にたくさん日陰を作れます。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">ミストはどうですか。</div>
+          <div class="qa-a">風がなければ、湿度を上げて、かえって危険です。涼しく感じるだけなので、効く場所の特定が先決です。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">大濠公園はどうなりますか。</div>
+          <div class="qa-a">大濠公園は市の管轄ではありません。私が動かせるのは、家の近くにある小さな公園です。身近な所で実証を進めます。</div>
+        </div>
       </div>
     </div>
 
-    <div class="policy-extra">
-      <div class="policy-extra-card">
-        <span class="policy-extra-icon">&#128200;</span>
-        <div>
-          <div class="policy-extra-title">子どものSOSを、早く・正確に・見逃さない</div>
-          <div class="policy-extra-body">福岡県の中学校不登校率は全国ワースト2位。養護教諭・保健師・児童精神科が繋がれば、今すぐ変えられることがある。その仕組みを県議会から作ります。</div>
+    <!-- 02 -->
+    <div class="pcard">
+      <div class="pcard-num">POLICY 02</div>
+      <div class="pcard-verb">子どもを育む</div>
+      <div class="pcard-tag">家庭に余裕を</div>
+
+      <div class="pblock">
+        <div class="pblock-key">起きていること</div>
+        <p>福岡市の放課後児童クラブに、待機児童はいません。市も「原則として、希望する日から入会できます」と書いています。</p>
+        <p>しかし、待機がいない訳ではありません。単に入る前に、要件で弾いているからです。</p>
+        <div class="cond">
+          <div class="cond-t">福岡市の入会要件（保護者と同居する方の全員）</div>
+          <ul>
+            <li>週2日のパート ── 入れません（月15日以上が必要）</li>
+            <li>転職して3か月 ── 入れません（6か月以上の継続が必要）</li>
+            <li>これから働きたい（求職中）── 入れません</li>
+            <li>在宅の祖父母と同居 ── 入れません（同居する方の「全員」が要件）</li>
+          </ul>
+        </div>
+        <p>働いている人しか、入れない。だから、働けない。</p>
+        <p>そして学校では、行けていない子どもが5,177人。1年で1.2倍になりました。市はステップルーム、スクールカウンセラー、LINE相談をやっています。それでも1.2倍です。区ごと・校区ごとの数字は、公表されていません。</p>
+      </div>
+
+      <div class="pblock">
+        <div class="pblock-key">今の数字と、4年後の約束</div>
+        <div class="kgi">
+          <div class="kgi-row">
+            <div class="kgi-what">放課後児童クラブの入会要件で、申し込めない世帯</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span>数えていません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">4年後</span><b>ゼロ</b>　要件で弾かない</div>
+            </div>
+            <p class="kgi-note">申し込む前に諦めた人は、どこにも記録が残りません。だから「何人いるか」ではなく、「弾く要件をなくす」ことを目指します。入会要件は市の規則です。市議会で動かせます。</p>
+          </div>
+          <div class="kgi-row">
+            <div class="kgi-what">校区別の不登校データの公表率</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　非公表</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">1年以内</span><b>100%</b>　全校区で公開</div>
+            </div>
+            <p class="kgi-note">見えないものは直せません。議会が求めれば出ます。そのうえで、対策を練り直すべきです。</p>
+          </div>
+          <div class="kgi-row">
+            <div class="kgi-what">教員が子どもと向き合える時間</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span>測っていません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">4年後</span><b>増やす</b></div>
+            </div>
+            <p class="kgi-note">まず、教員が事務と雑務に使っている時間を測ります。測らずに「削ります」とは言いません。</p>
+          </div>
         </div>
       </div>
-      <div class="policy-extra-card">
-        <span class="policy-extra-icon">&#128179;</span>
-        <div>
-          <div class="policy-extra-title">「聖域」となった住民税に、地方から声を</div>
-          <div class="policy-extra-body">所得税の壁は動きました。しかし住民税の基礎控除は43万円のまま。外国人医療費の未払いも市民の税金で補填されています。地方議会から国に働きかけます。</div>
+          <li><b>放課後児童クラブの入会要件を緩和する。</b>週2日でも、転職直後でも、これから働く人でも入れるように。子どもの居場所は、親の勤務日数で決めるべきではありません。</li>
+          <li><b>不登校の校区別データと中学卒業後の追跡調査。</b>どこで起きているのか、その子はどうなるのか。それを明らかにします。</li>
+          <li><b>教員の書類仕事を、AIで削る。</b>市職員18,483人のうち9,582人が教職員。その教員には、残業代が支払われていません。教員免許は書類と会議ではなく、子どものために使うべきです。</li>
+        </ol>
+      </div>
+
+      <div class="qa-wrap">
+        <div class="qa">
+          <div class="qa-q">学童は「待機ゼロ」だと聞きました。</div>
+          <div class="qa-a">待機がないのではありません。要件で、申し込む前に弾いているからです。週2日のパートでは入れません。転職して6か月経たないと入れません。求職中も入れません。数えていないものは、ゼロに見えます。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">要件を緩めたら、定員が足りなくなりませんか。</div>
+          <div class="qa-a">足りなくなります。だから同時に、定員も増やします。ただし、まず要件を緩めて、本当の需要を可視化することが先です。見えない需要に、予算はつきません。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">不登校を何人減らすと約束しないのですか。</div>
+          <div class="qa-a">義務教育の最大の目標は「社会的自立」です。不登校を減らしても、社会的自立が達成されなければ、間違った約束になります。まず、追跡調査から行います。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">住民税や都市計画税を下げてくれますか。</div>
+          <div class="qa-a">基礎控除の引き上げは国会の仕事です。地価高騰著しい福岡で、都市計画税は上限いっぱいです。何に使われているか、本当に必要な事業なのか、明らかにして、下げます。</div>
         </div>
       </div>
-      <div class="policy-extra-card">
-        <span class="policy-extra-icon">&#128203;</span>
-        <div>
-          <div class="policy-extra-title">データで証明する行政改革</div>
-          <div class="policy-extra-body">官学連携でAI活用の行政効率化を科学的に測定・検証。「実行しました」から「証明しました」へと進化した政治を実践します。</div>
+
+    <!-- 03 -->
+    <div class="pcard">
+      <div class="pcard-num">POLICY 03</div>
+      <div class="pcard-verb">暮らし続ける</div>
+      <div class="pcard-tag">迎えに来る行政へ</div>
+
+      <div class="pblock">
+        <div class="pblock-key">起きていること</div>
+        <p>制度はあります。窓口もあります。しかし、そこへ来られる人しか、救えていません。</p>
+        <p>一方で、福岡市はデータを持っています。水道の滞納。国保料の滞納。乳幼児健診の未受診。学校の連続欠席。全部、市の中にあります。繋がっていないだけです。</p>
+        <p>行政は、データを持っている。自治会や民生委員は、足と目を持っている。両者をつなぐシステム構築は、私の仕事です。</p>
+      </div>
+
+      <div class="pblock">
+        <div class="pblock-key">今の数字と、4年後の約束</div>
+        <div class="kgi">
+          <div class="kgi-row">
+            <div class="kgi-what">行政が把握できていない困窮世帯の、発見件数</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span>推定値がありません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">2年目まで</span><b>測定する仕組みをつくる</b></div>
+            </div>
+            <p class="kgi-note">仕組みが動けば、最初の数年は発見件数が増えるはずです。見えないものが、見えてきます。</p>
+          </div>
+          <div class="kgi-row">
+            <div class="kgi-what">検知から訪問までの仕組みの条例化</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span>ありません</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">2年以内</span><b>条例化</b>　4年で運用</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="policy-extra-card">
-        <span class="policy-extra-icon">&#128119;</span>
-        <div>
-          <div class="policy-extra-title">働く現場をカスハラから守る</div>
-          <div class="policy-extra-body">カスハラを県条例で定義し、警察・事業者・行政の三者連携体制を整備します。働く人が安心して働ける環境を県から作ります。</div>
+
+      <div class="pblock">
+        <div class="pblock-key">やること</div>
+        <ol>
+          <li><b>行政のデータで検知する。</b>データは庁内に留めます。外には出しません。多次元データを二値化することで、信用情報漏れを防ぎます。</li>
+          <li><b>自治会・民生委員の「気づき」を吸い上げる経路をつくる。</b>下から上への一方通行です。</li>
+          <li><b>両方が揃えば、職員が訪ねる。</b>新しい職員は、雇いません。</li>
+        </ol>
+      </div>
+
+      <div class="qa-wrap">
+        <div class="qa">
+          <div class="qa-q">監視社会になりませんか。</div>
+          <div class="qa-a">自治会に、信用情報は渡しません。データは庁内に留め、多次元データを二値化します。検知の条件と運用は、仮想的な具体例を挙げて公開します。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">自治会に負担を押し付けるのですか。</div>
+          <div class="qa-a">逆です。いま自治会は「気づいても、どこに言えばいいか分からない」状態です。その経路を作ることで、むしろ安心感が生まれます。</div>
+        </div>
+        <div class="qa">
+          <div class="qa-q">職員を増やさずに、訪問できるのですか。</div>
+          <div class="qa-a">AIによる業務効率化で残業を削り、外に出られる時間をつくります。新しい仕事を押し付けません。今ある仕事の効率を上げて、現場に時間を回します。</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
-<!-- X TIMELINE -->
+
+<!-- MEANS -->
+<section class="sec means" id="means">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">HOW</span>
+      <span class="sec-label-jp">どうやってやるのか、どう責任を取るのか</span>
+    </div>
+
+    <div class="mcard">
+      <div class="mcard-key">どうやってやるのか</div>
+      <div class="mcard-title">書類は、AIへ。<br>職員は、あなたのもとへ。</div>
+      <p>AIで人を減らせ、とは言いません。人を増やせ、とも言いません。書類に使っているお金と時間を、市民のために使うのです。</p>
+      <p>福岡市が1年間に支払っている時間外勤務手当は、約39億円（令和5年度決算）。これは、職員が書類の前で過ごした時間の値段です。</p>
+      <p>削った時間は、外に出る時間になります。削ったお金は、市民に返す余地になります。</p>
+
+      <div class="kgi">
+        <div class="kgi-row">
+          <div class="kgi-what">職員の平均残業時間・残業手当</div>
+          <div class="kgi-nums">
+            <div class="kgi-cell"><span class="lb">現在</span><b>未公表・約39億円</b>　令和5年度決算</div>
+            <div class="kgi-arrow">▶</div>
+            <div class="kgi-cell goal"><span class="lb">4年後</span><b>目標設定・約36億円</b></div>
+          </div>
+          <p class="kgi-note">職員数は増やしません。増やすのは、市民と接する時間です。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mcard">
+      <div class="mcard-key">どう責任を取るのか</div>
+      <div class="mcard-title">約束を、採点させてください。</div>
+      <p>ここに書いた目標は、全て具体的です。見えない数字の数だけ、悲劇が生まれます。</p>
+      <p>毎年、年度締めの3月に、全ての数字を公開します。政治家としての私の能力が、客観的に採点されます。</p>
+      <p>達成できなければ、「できませんでした」と書きます。言い訳ではなく、原因を突き詰めていきます。</p>
+      <p>「やりました」を語る議員は、たくさんいます。私は「証明しました」を積み上げる議員になりたいのです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- X -->
 <section class="sec x-sec" id="x-timeline">
   <div class="sec-inner">
     <div class="sec-label">
       <span class="sec-label-en">X / TIMELINE</span>
       <span class="sec-label-jp">最新の活動はXで</span>
     </div>
-    <div class="x-grid">
-      <div>
-        <p class="x-note">街頭活動・政策発信・日々の想いをXで発信しています。フォローして最新情報をお受け取りください。</p>
-        <a href="https://x.com/MakishimaKei" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:var(--white);padding:.7rem 1.5rem;font-size:14px;text-decoration:none;letter-spacing:.08em;margin-bottom:1.5rem;">
-          &#x1F426; @MakishimaKei をフォロー
-        </a>
+    <p class="x-note">街頭活動・政策発信・日々の想いをXで発信しています。</p>
+    <a href="https://x.com/MakishimaKei" target="_blank" rel="noopener" style="display:inline-block;background:var(--navy);color:var(--white);padding:.7rem 1.5rem;font-size:14px;text-decoration:none;letter-spacing:.08em;">@MakishimaKei をフォロー</a>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="sec line-sec" id="support-form">
+  <div class="sec-inner">
+    <div class="sec-label">
+      <span class="sec-label-en">JOIN US</span>
+      <span class="sec-label-jp">後援会への入会</span>
+    </div>
+    <p class="line-intro">まきしま啓後援会では、一緒に福岡を変えてくれる仲間を募集しています。<br>入会費・年会費は無料。LINEから気軽にご参加ください。</p>
+
+    <div class="line-cards">
+      <div class="line-card">
+        <div class="line-card-title">LINEで友だち追加</div>
+        <a class="line-add-btn" href="https://lin.ee/7hGj5Jd" target="_blank" rel="noopener">友だちに追加</a>
+      </div>
+      <div class="line-card">
+        <div class="line-card-title">QRコードで追加</div>
+        <img src="qr.PNG" alt="まきしま啓後援会 LINE QRコード" style="width:160px;height:160px;">
       </div>
     </div>
   </div>
 </section>
-  
-<!-- 後援会入会（LINE） -->
-<section class="sec line-sec" id="support-form">
- <div class="sec-inner">
-   <div class="sec-label">
-     <span class="sec-label-en">JOIN US</span>
-     <span class="sec-label-jp">後援会への入会</span>
-   </div>
-   <p class="line-intro">まきしま啓後援会では、一緒に福岡を変えてくれる仲間を募集しています。<br>入会費・年会費は<strong>無料</strong>。LINEから気軽にご参加ください。活動情報もLINEでお届けします。</p>
-
-   <div class="line-cards">
-     <div class="line-card">
-       <div class="line-card-title">&#128241; LINEで友だち追加</div>
-       <a class="line-add-btn" href="https://lin.ee/7hGj5Jd" target="_blank" rel="noopener">
-         友だちに追加
-       </a>
-     </div>
-     <div class="line-card">
-       <div class="line-card-title">&#128247; QRコードで追加</div>
-       <img src="qr.PNG" alt="まきしま啓後援会 LINE QRコード" style="width:160px;height:160px;margin-top:1rem;">
-     </div>
-   </div>
- </div>
-</section>
-
 
 <!-- CONTACT -->
 <section class="sec contact" id="contact">
@@ -471,11 +573,11 @@ footer span{color:var(--orange)}
         <div class="office-info">
           まきしま啓 後援会事務所<br>
           〒810-00XX<br>
-          福岡市東区○○<br><br>
+          福岡市中央区○○
         </div>
       </div>
       <div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrjLmefrdwpM61BviYwoAotQ4BRjocBx5jXV6g1BeW9eOeIA/viewform" target="_blank" class="form-submit" style="display:inline-block;text-align:center;text-decoration:none;padding:1rem 3rem;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrjLmefrdwpM61BviYwoAotQ4BRjocBx5jXV6g1BeW9eOeIA/viewform" target="_blank" rel="noopener" class="form-submit" style="display:inline-block;text-align:center;text-decoration:none;padding:1rem 3rem;">
           お問い合わせフォームへ
         </a>
       </div>
@@ -483,9 +585,9 @@ footer span{color:var(--orange)}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © <span>まきしま　啓</span>｜国民民主党　福岡県政策委員｜まきしま啓後援会</footer>
+  © <span>まきしま　啓</span>｜国民民主党公認　福岡市議会議員候補（中央区）｜まきしま啓後援会
+</footer>
 
 </body>
 </html>
