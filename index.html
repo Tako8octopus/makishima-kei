@@ -33,9 +33,8 @@ body{font-family:var(--sans);background:var(--white);color:var(--text)}
 .hero-content{position:relative;z-index:2;width:100%;padding:3.5rem 2.5rem;display:flex;flex-direction:column;justify-content:flex-end;max-width:600px}
 .hero-area{color:rgba(255,255,255,.5);font-size:13px;letter-spacing:.1em;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
 .hero-sep{width:24px;height:1px;background:var(--orange);flex-shrink:0}
-.hero-catch{font-family:var(--serif);font-size:36px;font-weight:200;color:var(--white);line-height:1.95;letter-spacing:.06em;margin-bottom:1.25rem}
+.hero-catch{font-family:var(--serif);font-size:36px;font-weight:200;color:var(--white);line-height:1.95;letter-spacing:.06em;margin-bottom:2rem}
 .hero-catch em{color:var(--orange2);font-style:normal}
-.hero-sub{font-family:var(--serif);font-size:19px;font-weight:200;color:rgba(255,255,255,.72);letter-spacing:.1em;line-height:1.9;margin-bottom:2rem}
 .hero-bar{width:36px;height:3px;background:var(--orange);margin-bottom:1.6rem}
 .hero-name{color:rgba(255,255,255,.9);font-family:var(--serif);font-size:48px;font-weight:400;letter-spacing:.16em;margin-bottom:.3rem}
 .hero-en{color:rgba(255,255,255,.28);font-size:12px;letter-spacing:.22em;margin-bottom:.9rem}
@@ -76,15 +75,38 @@ body{font-family:var(--sans);background:var(--white);color:var(--text)}
 .policy-quote{font-size:18px;font-family:var(--serif);font-weight:300;color:var(--navy);border-left:3px solid var(--orange);padding:.6rem 1.1rem;margin-bottom:.9rem}
 .policy-sub{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:2.5rem}
 
-.pcard{background:var(--white);border-top:4px solid var(--navy);padding:2.25rem 2rem;margin-bottom:1.25rem}
-.pcard-num{font-size:11px;color:var(--orange);letter-spacing:.2em;font-weight:500;margin-bottom:1rem}
+/* 畳めるカード（共通） */
+.fold{margin-bottom:1.25rem}
+.fold > summary{cursor:pointer;list-style:none;display:block;transition:background .2s}
+.fold > summary::-webkit-details-marker{display:none}
+.more{
+  display:flex;align-items:center;gap:.5rem;
+  margin-top:1rem;
+  font-size:12px;color:var(--orange);letter-spacing:.1em;
+}
+.more:before{content:"＋";font-size:14px;line-height:1}
+.fold[open] .more:before{content:"−"}
+.more span:after{content:"を見る"}
+.fold[open] .more span:after{content:"を閉じる"}
+
+/* POLICYカード */
+.pcard{background:var(--white);border-top:4px solid var(--navy)}
+.pcard > summary{padding:2rem}
+.pcard > summary:hover{background:#fafaf8}
+.pcard-num{font-size:11px;color:var(--orange);letter-spacing:.2em;font-weight:500;margin-bottom:.9rem}
 .pcard-verb{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--navy);letter-spacing:.12em;line-height:1.5}
-.pcard-tag{font-family:var(--serif);font-weight:300;font-size:18px;color:var(--muted);letter-spacing:.1em;margin-top:.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bd);margin-bottom:1.75rem}
+.pcard-tag{font-family:var(--serif);font-weight:300;font-size:18px;color:var(--muted);letter-spacing:.1em;margin-top:.4rem}
+.pcard-lead{
+  font-size:14px;color:#3a3a3a;line-height:1.95;
+  margin-top:1.1rem;padding-top:1.1rem;
+  border-top:1px solid var(--bd);
+}
+.pcard-body{padding:0 2rem 2.25rem}
 
 .pblock{margin-bottom:1.75rem}
 .pblock:last-child{margin-bottom:0}
 .pblock-key{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.8rem}
-.pblock p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.8rem}
+.pblock p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.9rem}
 .pblock p:last-child{margin-bottom:0}
 .pblock ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:1rem}
 .pblock ol li{counter-increment:s;font-size:14px;line-height:2.05;color:#3a3a3a;padding-left:2rem;position:relative}
@@ -121,14 +143,22 @@ body{font-family:var(--sans);background:var(--white);color:var(--text)}
 
 /* MEANS */
 .means{background:var(--white)}
-.mcard{border-left:4px solid var(--orange);background:var(--light);padding:2rem;margin-bottom:1.25rem}
+.mcard{border-left:4px solid var(--orange);background:var(--light)}
+.mcard > summary{padding:2rem}
+.mcard > summary:hover{background:#f0efec}
 .mcard-key{font-size:11px;color:var(--orange);letter-spacing:.18em;font-weight:500;margin-bottom:.8rem}
-.mcard-title{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--navy);letter-spacing:.08em;line-height:1.7;margin-bottom:1.25rem}
-.mcard p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.8rem}
-.mcard p:last-of-type{margin-bottom:0}
-.mcard .kgi{margin-top:1.5rem;border-top:1px solid var(--bd)}
-.mcard .kgi-cell{background:var(--white)}
-.mcard .kgi-cell.goal{background:rgba(245,181,0,.18)}
+.mcard-title{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--navy);letter-spacing:.08em;line-height:1.7}
+.mcard-lead{
+  font-size:14px;color:#3a3a3a;line-height:1.95;
+  margin-top:1.1rem;padding-top:1.1rem;
+  border-top:1px solid var(--bd);
+}
+.mcard-body{padding:0 2rem 2.25rem}
+.mcard-body p{font-size:14px;line-height:2.05;color:#3a3a3a;margin-bottom:.9rem}
+.mcard-body p:last-of-type{margin-bottom:0}
+.mcard-body .kgi{margin-top:1.5rem;border-top:1px solid var(--bd)}
+.mcard-body .kgi-cell{background:var(--white)}
+.mcard-body .kgi-cell.goal{background:rgba(245,181,0,.2)}
 
 /* LINE */
 .line-sec{background:var(--light)}
@@ -153,21 +183,21 @@ body{font-family:var(--sans);background:var(--white);color:var(--text)}
 
 footer{background:var(--navy);color:rgba(255,255,255,.35);text-align:center;padding:1.75rem;font-size:12px;letter-spacing:.08em}
 footer span{color:var(--orange)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 @media(max-width:768px){
   .nav-links{display:none}
   .hero{min-height:480px}
   .hero-catch{font-size:26px}
-  .hero-sub{font-size:16px}
   .hero-name{font-size:28px}
   .hero-content{padding:2rem 1.5rem}
   .profile-top{grid-template-columns:1fr;gap:1.5rem}
   .profile-photo{width:100%;height:250px}
-  .pcard{padding:1.75rem 1.35rem}
+  .pcard > summary,.mcard > summary{padding:1.75rem 1.35rem}
+  .pcard-body,.mcard-body{padding:0 1.35rem 1.75rem}
   .pcard-verb{font-size:24px}
-  .mcard{padding:1.75rem 1.35rem}
+  .mcard-title{font-size:20px}
   .kgi-nums{grid-template-columns:1fr;gap:.4rem}
   .kgi-arrow{text-align:left;transform:rotate(90deg);width:1em}
   .line-cards{grid-template-columns:1fr}
@@ -201,11 +231,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       医療も、行政も、<br>
       <em>建物の外へ。</em>
     </div>
-    <div class="hero-sub"></div>
     <div class="hero-bar"></div>
     <div class="hero-name">まきしま　啓</div>
     <div class="hero-en">KEI MAKISHIMA</div>
-    <div class="hero-role">麻酔科専門医　<br>九州大学大学院　医学研究院</div>
+    <div class="hero-role">現役麻酔科医　／　麻酔科専門医<br>九州大学大学院　医学研究院</div>
     <a href="#support-form" class="hero-join-btn">▼ 後援会に参加する</a>
   </div>
 </section>
@@ -216,7 +245,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <div class="greet-bar"></div>
     <div class="greet-text">
       <p>私が医師を志したのは、父が治らない痛みを抱えたからでした。</p>
-      <p>CRPS－－難治性の慢性疼痛。「治らない病気を治したい」。その一心で九州大学医学部に進み、麻酔科医になりました。それでも、父は治せませんでした。</p>
+      <p>CRPS——難治性の慢性疼痛。「治らない病気を治したい」。その一心で九州大学医学部に進み、麻酔科医になりました。それでも、父は治せませんでした。</p>
       <p>父を救ったのは、私ではありません。孫の笑顔でした。痛みは治らない。人生は戻らない。それでも生きようとしている。私は、医学の外にあるものを見たのです。</p>
       <p>人を生かすのは、家族の笑顔です。</p>
       <p>麻酔科医は、呼ばれてから駆けつける仕事です。</p>
@@ -284,206 +313,225 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
     <p class="policy-sub">——実行ではなく、効果を問う。今の数字を出した上で、4年後の数字から逃げません。</p>
 
     <!-- 01 -->
-    <div class="pcard">
-      <div class="pcard-num">POLICY 01</div>
-      <div class="pcard-verb">天神で過ごす</div>
-      <div class="pcard-tag">涼しい福岡を</div>
+    <details class="fold pcard">
+      <summary>
+        <div class="pcard-num">POLICY 01</div>
+        <div class="pcard-verb">街中で過ごす</div>
+        <div class="pcard-tag">涼しい福岡を</div>
+        <p class="pcard-lead">公園の暑さを測り、日陰をつくる。財源は、宿泊税。</p>
+        <div class="more"><span>数字と具体策</span></div>
+      </summary>
 
-      <div class="pblock">
-        <div class="pblock-key">起きていること</div>
-        <p>夏、子どもが公園で遊べなくなりました。そして熱中症で亡くなる方の多くは、家の中で、エアコンをつけずに倒れています。</p>
-        <p>福岡市の熱中症対策は、デジタルサイネージ、SNS、出前講座、LINE配信、のぼり、リーフレット。クールシェア860施設。すべて「知らせること」です。</p>
-        <p>知らせても、エアコンをつけない人がいます。日陰も、公園の対策も、訪問も、必要です。どの公園が危険なのかを、測ることから始めませんか。</p>
-      </div>
+      <div class="pcard-body">
+        <div class="pblock">
+          <div class="pblock-key">起きていること</div>
+          <p>夏、子どもが公園で遊べなくなりました。そして熱中症で亡くなる方の多くは、家の中で、エアコンをつけずに倒れています。</p>
+          <p>福岡市の熱中症対策は、SNS配信、出前講座、のぼり、クールシェア860施設。すべて「知らせること」です。知らせても、つけない人がいる。そして市は、どの公園が危険なのかを、測っていません。</p>
+        </div>
 
-      <div class="pblock">
-        <div class="pblock-key">今の数字と、4年後の約束</div>
-        <div class="kgi">
-          <div class="kgi-row">
-            <div class="kgi-what">公園ごとの暑さ指数（WBGT）の公開率</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　測っていません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">4年後</span><b>100%</b>　全公園で公開</div>
+        <div class="pblock">
+          <div class="pblock-key">今の数字と、4年後の約束</div>
+          <div class="kgi">
+            <div class="kgi-row">
+              <div class="kgi-what">公園ごとの暑さ指数（WBGT）の公開率</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　測っていません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">4年後</span><b>100%</b>　全公園で公開</div>
+              </div>
+            </div>
+            <div class="kgi-row">
+              <div class="kgi-what">暑さ指数あたりの、熱中症救急搬送者数</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span>検討されていません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">4年後</span><b>指数の作成と相対的減少</b></div>
+              </div>
+              <p class="kgi-note">搬送者の数そのものは、気温で決まります。猛暑の年は必ず増える。だから「同じ暑さの日に、何人運ばれたか」で測ります。天候ではなく、対策の効果だけが出ます。1年目に測り、2年目から比べます。</p>
             </div>
           </div>
-          <div class="kgi-row">
-            <div class="kgi-what">暑さ指数あたりの、熱中症救急搬送者数</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span>検討されていません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">4年後</span><b>指数の作成と相対的減少</b></div>
-            </div>
-            <p class="kgi-note">搬送者の数そのものは、気温で決まります。猛暑の年は必ず増える。だから「同じ暑さの日に、何人運ばれたか」で測ります。天候ではなく、対策の効果だけが出ます。1年目に測り、2年目から比べます。</p>
+        </div>
+
+        <div class="pblock">
+          <div class="pblock-key">やること</div>
+          <ol>
+            <li><b>公園ごとに暑さを測り、公開する。</b>外出自粛を、熱中症対策の最後の砦にしたい。</li>
+            <li><b>日陰をつくる。</b>木を切りすぎない剪定に変える。遊具の表面温度を測り、危険な遊具に日除けをつける。</li>
+            <li><b>財源は、宿泊税。</b>福岡市の宿泊税は2万円未満で200円のまま、2020年から動いていません。観光客が増えて暑くなった街の対策費を、市民ではなく観光客に払ってもらいます。</li>
+          </ol>
+        </div>
+
+        <div class="qa-wrap">
+          <div class="qa">
+            <div class="qa-q">水遊び場や噴水はつくらないのですか。</div>
+            <div class="qa-a">1か所に数千万円かかります。同じお金があれば、公園にたくさん日陰を作れます。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">ミストはどうですか。</div>
+            <div class="qa-a">風がなければ、湿度を上げて、かえって危険です。涼しく感じるだけなので、効く場所の特定が先決です。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">大濠公園はどうなりますか。</div>
+            <div class="qa-a">大濠公園は市の管轄ではありません。私が動かせるのは、家の近くにある小さな公園です。身近な所で実証を進めます。</div>
           </div>
         </div>
       </div>
-
-      <div class="pblock">
-        <div class="pblock-key">やること</div>
-        <ol>
-          <li><b>公園ごとに暑さを測り、公開する。</b>外出自粛を熱中症対策の最後の砦にしたい。</li>
-          <li><b>日陰をつくる。</b>木を切りすぎない剪定に変える。遊具の表面温度を測り、危険な遊具に日除けをつける。</li>
-          <li><b>財源は、宿泊税。</b>福岡市の宿泊税は2万円未満で200円のまま、2020年から動いていません。観光客が増えて暑くなった街の対策費を、市民ではなく観光客に払ってもらいます。</li>
-        </ol>
-      </div>
-
-      <div class="qa-wrap">
-        <div class="qa">
-          <div class="qa-q">水遊び場や噴水はつくらないのですか。</div>
-          <div class="qa-a">1か所に数千万円かかります。同じお金があれば、公園にたくさん日陰を作れます。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">ミストはどうですか。</div>
-          <div class="qa-a">風がなければ、湿度を上げて、かえって危険です。涼しく感じるだけなので、効く場所の特定が先決です。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">大濠公園はどうなりますか。</div>
-          <div class="qa-a">大濠公園は市の管轄ではありません。私が動かせるのは、家の近くにある小さな公園です。身近な所で実証を進めます。</div>
-        </div>
-      </div>
-    </div>
+    </details>
 
     <!-- 02 -->
-    <div class="pcard">
-      <div class="pcard-num">POLICY 02</div>
-      <div class="pcard-verb">子どもを育む</div>
-      <div class="pcard-tag">家庭に余裕を</div>
+    <details class="fold pcard">
+      <summary>
+        <div class="pcard-num">POLICY 02</div>
+        <div class="pcard-verb">子どもを育む</div>
+        <div class="pcard-tag">家庭に余裕を</div>
+        <p class="pcard-lead">学童の入会要件をゆるめ、不登校を見える化する。</p>
+        <div class="more"><span>数字と具体策</span></div>
+      </summary>
 
-      <div class="pblock">
-        <div class="pblock-key">起きていること</div>
-        <p>福岡市の放課後児童クラブに、待機児童はいません。市も「原則として、希望する日から入会できます」と書いています。</p>
-        <p>しかし、待機がいない訳ではありません。単に入る前に、要件で弾いているからです。</p>
-        <div class="cond">
-          <div class="cond-t">福岡市の入会要件（保護者と同居する方の全員）</div>
-          <ul>
-            <li>週2日のパート ── 入れません（月15日以上が必要）</li>
-            <li>転職して3か月 ── 入れません（6か月以上の継続が必要）</li>
-            <li>これから働きたい（求職中）── 入れません</li>
-            <li>在宅の祖父母と同居 ── 入れません（同居する方の「全員」が要件）</li>
-          </ul>
+      <div class="pcard-body">
+        <div class="pblock">
+          <div class="pblock-key">起きていること</div>
+          <p>福岡市の放課後児童クラブに、待機児童はいません。市も「原則として、希望する日から入会できます」と書いています。ただ、入りたい人が入れているわけではありません。申し込む前に、要件で弾いているからです。</p>
+          <div class="cond">
+            <div class="cond-t">福岡市の入会要件（保護者と同居する方の全員）</div>
+            <ul>
+              <li>週2日のパート ── 入れません（月15日以上が必要）</li>
+              <li>転職して3か月 ── 入れません（6か月以上の継続が必要）</li>
+              <li>これから働きたい（求職中）── 入れません</li>
+              <li>在宅の祖父母と同居 ── 入れません（同居する方の「全員」が要件）</li>
+            </ul>
+          </div>
+          <p>働いている人しか、入れない。だから、働けない。そして学校では、行けていない子どもが5,177人。1年で1.2倍になりました。市も手を打っています。それでも1.2倍です。区ごと・校区ごとの数字は、公表されていません。</p>
         </div>
-        <p>働いている人しか、入れない。だから、働けない。</p>
-        <p>そして学校では、行けていない子どもが5,177人。1年で1.2倍になりました。市はステップルーム、スクールカウンセラー、LINE相談をやっています。それでも1.2倍です。区ごと・校区ごとの数字は、公表されていません。</p>
-      </div>
 
-      <div class="pblock">
-        <div class="pblock-key">今の数字と、4年後の約束</div>
-        <div class="kgi">
-          <div class="kgi-row">
-            <div class="kgi-what">放課後児童クラブの入会要件で、申し込めない世帯</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span>数えていません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">4年後</span><b>ゼロ</b>　要件で弾かない</div>
+        <div class="pblock">
+          <div class="pblock-key">今の数字と、4年後の約束</div>
+          <div class="kgi">
+            <div class="kgi-row">
+              <div class="kgi-what">放課後児童クラブの入会要件で、申し込めない世帯</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span>数えていません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">4年後</span><b>働き方で弾かない</b>　需要を見える化する</div>
+              </div>
+              <p class="kgi-note">申し込む前に諦めた人は、どこにも記録が残りません。だから弾く条件をなくします。家族要件は条例、日数要件は規則。前者は議会で変え、後者は市長に求めます。</p>
             </div>
-            <p class="kgi-note">申し込む前に諦めた人は、どこにも記録が残りません。だから「何人いるか」ではなく、「弾く要件をなくす」ことを目指します。入会要件は市の規則です。市議会で動かせます。</p>
-          </div>
-          <div class="kgi-row">
-            <div class="kgi-what">校区別の不登校データの公表率</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　非公表</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">1年以内</span><b>100%</b>　全校区で公開</div>
+            <div class="kgi-row">
+              <div class="kgi-what">校区別の不登校データの公表率</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span><b>0%</b>　非公表</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">1年以内</span><b>100%</b>　全校区で公開</div>
+              </div>
+              <p class="kgi-note">見えないものは直せません。議会が求めれば出ます。そのうえで、対策を練り直すべきです。</p>
             </div>
-            <p class="kgi-note">見えないものは直せません。議会が求めれば出ます。そのうえで、対策を練り直すべきです。</p>
-          </div>
-          <div class="kgi-row">
-            <div class="kgi-what">教員が子どもと向き合える時間</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span>測っていません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">4年後</span><b>増やす</b></div>
+            <div class="kgi-row">
+              <div class="kgi-what">教員が子どもと向き合える時間</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span>測っていません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">4年後</span><b>増やす</b></div>
+              </div>
+              <p class="kgi-note">まず、教員が事務と雑務に使っている時間を測ります。測らずに「削ります」とは言いません。</p>
             </div>
-            <p class="kgi-note">まず、教員が事務と雑務に使っている時間を測ります。測らずに「削ります」とは言いません。</p>
           </div>
         </div>
-      </div>
-          <li><b>放課後児童クラブの入会要件を緩和する。</b>週2日でも、転職直後でも、これから働く人でも入れるように。子どもの居場所は、親の勤務日数で決めるべきではありません。</li>
-          <li><b>不登校の校区別データと中学卒業後の追跡調査。</b>どこで起きているのか、その子はどうなるのか。それを明らかにします。</li>
-          <li><b>教員の書類仕事を、AIで削る。</b>市職員18,483人のうち9,582人が教職員。その教員には、残業代が支払われていません。教員免許は書類と会議ではなく、子どものために使うべきです。</li>
-        </ol>
-      </div>
 
-      <div class="qa-wrap">
-        <div class="qa">
-          <div class="qa-q">学童は「待機ゼロ」だと聞きました。</div>
-          <div class="qa-a">待機がないのではありません。要件で、申し込む前に弾いているからです。週2日のパートでは入れません。転職して6か月経たないと入れません。求職中も入れません。数えていないものは、ゼロに見えます。</div>
+        <div class="pblock">
+          <div class="pblock-key">やること</div>
+          <ol>
+            <li><b>放課後児童クラブの入会要件を緩和する。</b>週2日でも、転職直後でも、これから働く人でも入れるように。子どもの居場所は、親の勤務日数で決めるべきではありません。</li>
+            <li><b>不登校の校区別データと、中学卒業後の追跡調査。</b>どこで起きているのか、その子はどうなるのか。それを明らかにします。</li>
+            <li><b>教員の書類仕事を、AIで削る。</b>市職員18,483人のうち9,582人が教職員。教員には「残業代」がありません。教員免許は書類と会議ではなく、子どものために使うべきです。</li>
+          </ol>
         </div>
-        <div class="qa">
-          <div class="qa-q">要件を緩めたら、定員が足りなくなりませんか。</div>
-          <div class="qa-a">足りなくなります。だから同時に、定員も増やします。ただし、まず要件を緩めて、本当の需要を可視化することが先です。見えない需要に、予算はつきません。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">不登校を何人減らすと約束しないのですか。</div>
-          <div class="qa-a">義務教育の最大の目標は「社会的自立」です。不登校を減らしても、社会的自立が達成されなければ、間違った約束になります。まず、追跡調査から行います。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">住民税や都市計画税を下げてくれますか。</div>
-          <div class="qa-a">基礎控除の引き上げは国会の仕事です。地価高騰著しい福岡で、都市計画税は上限いっぱいです。何に使われているか、本当に必要な事業なのか、明らかにして、下げます。</div>
+
+        <div class="qa-wrap">
+          <div class="qa">
+            <div class="qa-q">学童は「待機ゼロ」だと聞きました。</div>
+            <div class="qa-a">待機がないのではありません。要件で、申し込む前に弾いているからです。週2日のパートでは入れません。転職して6か月経たないと入れません。求職中も入れません。数えていないものは、ゼロに見えます。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">要件を緩めたら、定員が足りなくなりませんか。</div>
+            <div class="qa-a">足りなくなります。だから同時に、定員も増やします。ただし、まず要件を緩めて、本当の需要を可視化することが先です。見えない需要に、予算はつきません。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">不登校を何人減らすと約束しないのですか。</div>
+            <div class="qa-a">義務教育の最大の目標は「社会的自立」です。不登校を減らしても、社会的自立が達成されなければ、間違った約束になります。まず、追跡調査から行います。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">住民税や都市計画税を下げてくれますか。</div>
+            <div class="qa-a">基礎控除の引き上げは国会の仕事です。地価高騰著しい福岡で、都市計画税は上限いっぱいです。何に使われているか、本当に必要な事業なのか、明らかにして、下げます。</div>
+          </div>
         </div>
       </div>
+    </details>
 
     <!-- 03 -->
-    <div class="pcard">
-      <div class="pcard-num">POLICY 03</div>
-      <div class="pcard-verb">暮らし続ける</div>
-      <div class="pcard-tag">迎えに来る行政へ</div>
+    <details class="fold pcard">
+      <summary>
+        <div class="pcard-num">POLICY 03</div>
+        <div class="pcard-verb">暮らし続ける</div>
+        <div class="pcard-tag">迎えに来る行政へ</div>
+        <p class="pcard-lead">見えていない困窮世帯を、見つけに行く。</p>
+        <div class="more"><span>数字と具体策</span></div>
+      </summary>
 
-      <div class="pblock">
-        <div class="pblock-key">起きていること</div>
-        <p>制度はあります。窓口もあります。しかし、そこへ来られる人しか、救えていません。</p>
-        <p>一方で、福岡市はデータを持っています。水道の滞納。国保料の滞納。乳幼児健診の未受診。学校の連続欠席。全部、市の中にあります。繋がっていないだけです。</p>
-        <p>行政は、データを持っている。自治会や民生委員は、足と目を持っている。両者をつなぐシステム構築は、私の仕事です。</p>
-      </div>
+      <div class="pcard-body">
+        <div class="pblock">
+          <div class="pblock-key">起きていること</div>
+          <p>制度はあります。窓口もあります。しかし、そこへ来られる人しか、救えていません。一方で福岡市は、水道や国保料の滞納、乳幼児健診の未受診、学校の連続欠席——データを持っています。繋がっていないだけです。</p>
+          <p>行政は、データを持っている。自治会や民生委員は、足と目を持っている。両者をつなぐシステム構築は、私の仕事です。</p>
+        </div>
 
-      <div class="pblock">
-        <div class="pblock-key">今の数字と、4年後の約束</div>
-        <div class="kgi">
-          <div class="kgi-row">
-            <div class="kgi-what">行政が把握できていない困窮世帯の、発見件数</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span>推定値がありません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">2年目まで</span><b>測定する仕組みをつくる</b></div>
+        <div class="pblock">
+          <div class="pblock-key">今の数字と、4年後の約束</div>
+          <div class="kgi">
+            <div class="kgi-row">
+              <div class="kgi-what">行政が把握できていない困窮世帯の、発見件数</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span>推定値がありません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">2年目まで</span><b>測定する仕組みをつくる</b></div>
+              </div>
+              <p class="kgi-note">仕組みが動けば、最初の数年は発見件数が増えるはずです。見えないものが、見えてきます。</p>
             </div>
-            <p class="kgi-note">仕組みが動けば、最初の数年は発見件数が増えるはずです。見えないものが、見えてきます。</p>
-          </div>
-          <div class="kgi-row">
-            <div class="kgi-what">検知から訪問までの仕組みの条例化</div>
-            <div class="kgi-nums">
-              <div class="kgi-cell"><span class="lb">現在</span>ありません</div>
-              <div class="kgi-arrow">▶</div>
-              <div class="kgi-cell goal"><span class="lb">2年以内</span><b>条例化</b>　4年で運用</div>
+            <div class="kgi-row">
+              <div class="kgi-what">検知から訪問までの仕組みの条例化</div>
+              <div class="kgi-nums">
+                <div class="kgi-cell"><span class="lb">現在</span>ありません</div>
+                <div class="kgi-arrow">▶</div>
+                <div class="kgi-cell goal"><span class="lb">2年以内</span><b>条例化</b>　4年で運用</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="pblock">
-        <div class="pblock-key">やること</div>
-        <ol>
-          <li><b>行政のデータで検知する。</b>データは庁内に留めます。外には出しません。多次元データを二値化することで、信用情報漏れを防ぎます。</li>
-          <li><b>自治会・民生委員の「気づき」を吸い上げる経路をつくる。</b>下から上への一方通行です。</li>
-          <li><b>両方が揃えば、職員が訪ねる。</b>新しい職員は、雇いません。</li>
-        </ol>
-      </div>
+        <div class="pblock">
+          <div class="pblock-key">やること</div>
+          <ol>
+            <li><b>行政のデータで検知する。</b>データは庁内に留めます。外には出しません。多次元データを二値化することで、信用情報漏れを防ぎます。</li>
+            <li><b>自治会・民生委員の「気づき」を吸い上げる経路をつくる。</b>下から上への一方通行です。</li>
+            <li><b>両方が揃えば、職員が訪ねる。</b>新しい職員は、雇いません。</li>
+          </ol>
+        </div>
 
-      <div class="qa-wrap">
-        <div class="qa">
-          <div class="qa-q">監視社会になりませんか。</div>
-          <div class="qa-a">自治会に、信用情報は渡しません。データは庁内に留め、多次元データを二値化します。検知の条件と運用は、仮想的な具体例を挙げて公開します。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">自治会に負担を押し付けるのですか。</div>
-          <div class="qa-a">逆です。いま自治会は「気づいても、どこに言えばいいか分からない」状態です。その経路を作ることで、むしろ安心感が生まれます。</div>
-        </div>
-        <div class="qa">
-          <div class="qa-q">職員を増やさずに、訪問できるのですか。</div>
-          <div class="qa-a">AIによる業務効率化で残業を削り、外に出られる時間をつくります。新しい仕事を押し付けません。今ある仕事の効率を上げて、現場に時間を回します。</div>
+        <div class="qa-wrap">
+          <div class="qa">
+            <div class="qa-q">監視社会になりませんか。</div>
+            <div class="qa-a">自治会に、信用情報は渡しません。データは庁内に留め、多次元データを二値化します。検知の条件と運用は、仮想的な具体例を挙げて公開します。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">自治会に負担を押し付けるのですか。</div>
+            <div class="qa-a">逆です。いま自治会は「気づいても、どこに言えばいいか分からない」状態です。その経路を作ることで、むしろ安心感が生まれます。</div>
+          </div>
+          <div class="qa">
+            <div class="qa-q">職員を増やさずに、訪問できるのですか。</div>
+            <div class="qa-a">AIによる業務効率化で残業を削り、外に出られる時間をつくります。新しい仕事を押し付けません。今ある仕事の効率を上げて、現場に時間を回します。</div>
+          </div>
         </div>
       </div>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -495,34 +543,48 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-off
       <span class="sec-label-jp">どうやってやるのか、どう責任を取るのか</span>
     </div>
 
-    <div class="mcard">
-      <div class="mcard-key">どうやってやるのか</div>
-      <div class="mcard-title">書類は、AIへ。<br>職員は、あなたのもとへ。</div>
-      <p>AIで人を減らせ、とは言いません。人を増やせ、とも言いません。書類に使っているお金と時間を、市民のために使うのです。</p>
-      <p>福岡市が1年間に支払っている時間外勤務手当は、約39億円（令和5年度決算）。これは、職員が書類の前で過ごした時間の値段です。</p>
-      <p>削った時間は、外に出る時間になります。削ったお金は、市民に返す余地になります。</p>
+    <details class="fold mcard">
+      <summary>
+        <div class="mcard-key">どうやってやるのか</div>
+        <div class="mcard-title">書類は、AIへ。<br>職員は、あなたのもとへ。</div>
+        <p class="mcard-lead">残業を削って、市民と接する時間に回す。職員は増やさない。</p>
+        <div class="more"><span>具体策</span></div>
+      </summary>
 
-      <div class="kgi">
-        <div class="kgi-row">
-          <div class="kgi-what">職員の平均残業時間・残業手当</div>
-          <div class="kgi-nums">
-            <div class="kgi-cell"><span class="lb">現在</span><b>未公表・約39億円</b>　令和5年度決算</div>
-            <div class="kgi-arrow">▶</div>
-            <div class="kgi-cell goal"><span class="lb">4年後</span><b>目標設定・約36億円</b></div>
+      <div class="mcard-body">
+        <p>AIで人を減らせ、とは言いません。人を増やせ、とも言いません。書類に使っているお金と時間を、市民のために使うのです。</p>
+        <p>福岡市が1年間に支払っている時間外勤務手当は、職員一人あたり年47万円。総額では約39億円で、前年から7.6%増えました。</p>
+        <p>職員が書類の前で過ごす時間を削り、あなたの元へ。削ったお金は、市民に返します。誰も不幸にならない政治を目指します。</p>
+
+        <div class="kgi">
+          <div class="kgi-row">
+            <div class="kgi-what">職員の平均残業時間・残業手当</div>
+            <div class="kgi-nums">
+              <div class="kgi-cell"><span class="lb">現在</span><b>未公表・約39億円</b>　令和5年度決算</div>
+              <div class="kgi-arrow">▶</div>
+              <div class="kgi-cell goal"><span class="lb">4年後</span><b>目標設定・約36億円</b></div>
+            </div>
+            <p class="kgi-note">職員数は増やしません。増やすのは、市民と接する時間です。</p>
           </div>
-          <p class="kgi-note">職員数は増やしません。増やすのは、市民と接する時間です。</p>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="mcard">
-      <div class="mcard-key">どう責任を取るのか</div>
-      <div class="mcard-title">約束を、採点させてください。</div>
-      <p>ここに書いた目標は、全て具体的です。見えない数字の数だけ、悲劇が生まれます。</p>
-      <p>毎年、年度締めの3月に、全ての数字を公開します。政治家としての私の能力が、客観的に採点されます。</p>
-      <p>達成できなければ、「できませんでした」と書きます。言い訳ではなく、原因を突き詰めていきます。</p>
-      <p>「やりました」を語る議員は、たくさんいます。私は「証明しました」を積み上げる議員になりたいのです。</p>
-    </div>
+    <details class="fold mcard">
+      <summary>
+        <div class="mcard-key">どう責任を取るのか</div>
+        <div class="mcard-title">約束を、採点させてください。</div>
+        <p class="mcard-lead">毎年3月、すべての数字を公開する。任期中、4回。</p>
+        <div class="more"><span>具体策</span></div>
+      </summary>
+
+      <div class="mcard-body">
+        <p>ここに書いた目標は、全て具体的です。見えない数字の数だけ、悲劇が生まれます。</p>
+        <p>毎年、年度締めの3月に、全ての数字を公開します。政治家としての私の能力が、客観的に採点されます。</p>
+        <p>達成できなければ、「できませんでした」と書きます。言い訳ではなく、原因を突き詰めていきます。</p>
+        <p>「やりました」を語る議員は、たくさんいます。私は「証明しました」を積み上げる議員になりたいのです。</p>
+      </div>
+    </details>
   </div>
 </section>
 
